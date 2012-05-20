@@ -1,214 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/search_background"
-    android:orientation="vertical" >
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/banner" />
+    android:layout_height="fill_parent" >
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/display_background_container"
+        android:layout_height="fill_parent"
+        android:background="@color/search_background"
         android:orientation="vertical" >
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Carbonyl Flouride"
-            android:textColor="@color/white"
-            android:textSize="16dip"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/state_gas" />
-
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:shrinkColumns="*"
-        android:stretchColumns="*" >
-
-        <TableRow
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/display_background_header" >
+            android:src="@drawable/banner" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="HAZARDS"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="METERS"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="RED LIGHTS"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="Toxic"
-                    android:textColor="@color/display_text"
-                    android:textSize="15dip" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="Corrosive"
-                    android:textColor="@color/display_text"
-                    android:textSize="15dip" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="Flourine"
-                    android:textColor="@color/display_text"
-                    android:textSize="15dip" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="Water/Air"
-                    android:textColor="@color/display_text"
-                    android:textSize="15dip" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="Reactive"
-                    android:textColor="@color/display_text"
-                    android:textSize="15dip" />
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/display_background_container"
+            android:orientation="horizontal" >
 
             <TableLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_span="2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:shrinkColumns="*"
                 android:stretchColumns="*" >
 
-                <TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/display_background_container" >
 
                     <TextView
-                        android:gravity="left"
-                        android:padding="3dip"
-                        android:text="RAD"
-                        android:textColor="@color/display_text" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:gravity="center"
+                        android:text="Carbonyl Flouride"
+                        android:textColor="@color/white"
+                        android:textSize="18dip"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/display_background_container"
+                    android:paddingTop="10dip" >
 
                     <TextView
-                        android:gravity="left"
-                        android:padding="3dip"
-                        android:text="Gamma"
-                        android:textColor="@color/display_text" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="SOP Red0"
+                        android:textColor="@color/white"
+                        android:textSize="16dip"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="ERG #125"
+                        android:textColor="@color/white"
+                        android:textSize="16dip"
+                        android:textStyle="bold" />
                 </TableRow>
             </TableLayout>
-        </TableRow>
-    </TableLayout>
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:shrinkColumns="*"
-        android:stretchColumns="*" >
+            <ImageView
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:src="@drawable/diamond" />
 
-        <TableRow
+            <ImageView
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:src="@drawable/diamondskull" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/state_gas" />
+
+        <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/display_background_header" >
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
 
-            <TextView
-                android:layout_width="fill_parent"
+            <TableRow
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_span="2"
-                android:gravity="center"
-                android:padding="3dip"
-                android:text="PPE"
-                android:textColor="@color/white"
-                android:textSize="15dip" />
-        </TableRow>
+                android:background="@color/display_background_header" >
 
-        <TableRow
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="HAZARDS"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="METERS"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="RED LIGHTS"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Toxic"
+                        android:textColor="@color/display_text"
+                        android:textSize="15dip" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Corrosive"
+                        android:textColor="@color/display_text"
+                        android:textSize="15dip" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Flourine"
+                        android:textColor="@color/display_text"
+                        android:textSize="15dip" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Water/Air"
+                        android:textColor="@color/display_text"
+                        android:textSize="15dip" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Reactive"
+                        android:textColor="@color/display_text"
+                        android:textSize="15dip" />
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_span="2"
+                    android:shrinkColumns="*"
+                    android:stretchColumns="*" >
+
+                    <TableRow>
+
+                        <TextView
+                            android:gravity="left"
+                            android:padding="3dip"
+                            android:text="RAD"
+                            android:textColor="@color/display_text" />
+
+                        <TextView
+                            android:gravity="left"
+                            android:padding="3dip"
+                            android:text="Gamma"
+                            android:textColor="@color/display_text" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:gravity="left"
+                            android:padding="3dip"
+                            android:text="F*pH"
+                            android:textColor="@color/display_text" />
+
+                        <TextView
+                            android:gravity="left"
+                            android:padding="3dip"
+                            android:text="Color change in air"
+                            android:textColor="@color/display_text" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:gravity="left"
+                            android:padding="3dip"
+                            android:text="TempGun"
+                            android:textColor="@color/display_text" />
+
+                        <TextView
+                            android:gravity="left"
+                            android:padding="3dip"
+                            android:text="Increasing Temp."
+                            android:textColor="@color/display_text" />
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/display_background_container" >
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
 
-            <TextView
+            <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="Rescue (Line of Sight):"
-                android:textColor="@color/white" />
+                android:background="@color/display_background_header" >
 
-            <TextView
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="PPE"
+                    android:textColor="@color/white"
+                    android:textSize="15dip" />
+            </TableRow>
+
+            <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="Plumbing:"
-                android:textColor="@color/white" />
-        </TableRow>
+                android:background="@color/display_background_container" >
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/display_background_container" >
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="Rescue (Line of Sight):"
+                    android:textColor="@color/white" />
 
-            <TextView
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="Plumbing:"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="Level A(NFPA 1991)"
-                android:textColor="@color/white" />
+                android:layout_gravity="bottom"
+                android:background="@color/display_background_container" >
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:padding="3dip"
-                android:text="Level A(NFPA 1991)"
-                android:textColor="@color/white" />
-        </TableRow>
-    </TableLayout>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="Level A(NFPA 1991)"
+                    android:textColor="@color/white" />
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="Level A(NFPA 1991)"
+                    android:textColor="@color/white" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

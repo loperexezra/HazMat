@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World!</string>
-    <string name="app_name">HazMat</string>
+    <string name="app_name">HazMatGuru</string>
     <string name="search_chemical_name">Type in name of chemical</string>
     <string name="search_un_id">or type in UN ID#</string>
     <string name="lbl_search">Search</string>

@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dip"
-        android:padding="5dip"
         android:background="@color/search_background_container"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="5dip" >
 
         <TextView
             android:layout_width="fill_parent"
@@ -25,10 +25,11 @@
             android:gravity="center_horizontal"
             android:paddingTop="10dip"
             android:text="@string/search_chemical_name"
-            android:textColor="@color/search_label" 
-            android:textSize="12dip"/>
+            android:textColor="@color/search_label"
+            android:textSize="12dip" />
 
-        <EditText
+        <AutoCompleteTextView
+            android:id="@+id/edtSearch"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -53,6 +54,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:onClick="onClickSearch"
             android:text="@string/lbl_search"
             android:textColor="@color/search_label" />
 
