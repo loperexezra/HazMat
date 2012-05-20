@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/display_background_container"
-                    android:paddingTop="10dip" >
+                    android:paddingTop="7dip" >
 
                     <TextView
                         android:layout_width="fill_parent"
