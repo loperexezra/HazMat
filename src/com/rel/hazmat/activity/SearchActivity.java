@@ -1,5 +1,6 @@
 package com.rel.hazmat.activity;
 
+import roboguice.activity.RoboActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.AutoCompleteTextView;
 
 import com.rel.hazmat.R;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends RoboActivity {
 
     static final String[] COUNTRIES = new String[] { "Carbonyl Flouride",
             "Propane", "Helium", "Flourine, Compressed" };
