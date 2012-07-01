@@ -11,7 +11,7 @@ import com.rel.hazmat.provider.MaterialDAOProvider;
  * @author Lope Chupijay Emano
  * 
  */
-public class LobangClubModule extends AbstractModule {
+public class HazMatModule extends AbstractModule {
 
     @Override
     protected void configure() {

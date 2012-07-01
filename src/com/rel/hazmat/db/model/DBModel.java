@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 
 public abstract class DBModel {
     public static final String SLUG = "slug";
+    public static final String ID = "_id";
     @DatabaseField(columnName = SLUG, unique = true)
     protected String slug;
 

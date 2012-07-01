@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hazmat="http://schemas.android.com/apk/res/com.rel.hazmat"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/search_background"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/banner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dip"
+        android:background="@color/search_background_container"
+        android:orientation="vertical"
+        android:padding="16dip" >
+
+        <com.rel.hazmat.widgets.TypefacedEditText
+            android:id="@+id/edtChemicalName"
+            style="@style/ics_edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_chemical_name"
+            hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+        <!-- <AutoCompleteTextView -->
+        <!-- android:id="@+id/edtSearch" -->
+        <!-- android:layout_width="fill_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="center_horizontal" -->
+        <!-- android:textColor="@color/search_label" /> -->
+
+        <com.rel.hazmat.widgets.TypefacedEditText
+            android:id="@+id/edtUNID"
+            style="@style/ics_edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_un_id"
+            hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+        <com.rel.hazmat.widgets.TypefacedButton
+            style="@style/ics_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:onClick="onClickSearch"
+            android:text="@string/lbl_search"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+        <com.rel.hazmat.widgets.TypefacedButton
+            style="@style/ics_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:onClick="onClickSearchUnknown"
+            android:text="@string/lbl_unknown"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dip"
+        android:text="@string/lbl_version"
+        android:textColor="@color/search_label"
+        android:textSize="12dip" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/lbl_copyright"
+        android:textColor="@color/search_label"
+        android:textSize="12dip" />
+
+</LinearLayout>

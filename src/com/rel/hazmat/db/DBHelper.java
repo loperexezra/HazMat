@@ -17,10 +17,11 @@ import com.rel.hazmat.db.model.Material;
  * 
  */
 public class DBHelper extends OrmLiteSqliteOpenHelper {
-    private static final String DATABASE_NAME = "lobangclub.db";
+    private static final String DATABASE_NAME = "hazmat.db";
     private static final int DATABASE_VERSION = 1;
 
-    private Dao<Material, Integer> categoryTable = null;
+    private Dao<Material, Integer> materialTable = null;
+    private ConnectionSource connectionSource;
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -28,6 +29,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
+        this.connectionSource = connectionSource;
         try {
             TableUtils.createTable(connectionSource, Material.class);
         } catch (SQLException e) {
@@ -40,6 +42,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource,
             int oldVersion, int newVersion) {
+        this.connectionSource = connectionSource;
         try {
             TableUtils.dropTable(connectionSource, Material.class, true);
             onCreate(db, connectionSource);
@@ -52,14 +55,14 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     }
 
     public Dao<Material, Integer> getMaterialDao() throws SQLException {
-        if (categoryTable == null) {
+        if (materialTable == null) {
             try {
-                categoryTable = getDao(Material.class);
+                materialTable = getDao(Material.class);
             } catch (java.sql.SQLException e) {
                 e.printStackTrace();
             }
         }
-        return categoryTable;
+        return materialTable;
     }
 
     public void createFakeData() {
@@ -67,9 +70,9 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
         Material product2 = new Material("Carbonyl");
         Material product3 = new Material("Carbonate");
         try {
-            getMaterialDao().createIfNotExists(product);
-            getMaterialDao().createIfNotExists(product2);
-            getMaterialDao().createIfNotExists(product3);
+            getMaterialDao().create(product);
+            getMaterialDao().create(product2);
+            getMaterialDao().create(product3);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (java.sql.SQLException e) {
@@ -80,4 +83,5 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     public String test() {
         return "Successful injection";
     }
+
 }

@@ -1,12 +1,12 @@
 package com.rel.hazmat.activity;
 
-import com.rel.hazmat.R;
-
-import android.app.Activity;
+import roboguice.activity.RoboActivity;
 import android.os.Bundle;
 import android.view.Window;
 
-public class DisplayActivity extends Activity {
+import com.rel.hazmat.R;
+
+public class DisplayActivity extends RoboActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

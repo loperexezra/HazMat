@@ -1,19 +1,26 @@
 package com.rel.hazmat.db.model;
 
+import android.app.SearchManager;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "comment")
-public class Material extends DBModel{
+@DatabaseTable(tableName = "material")
+public class Material extends DBModel {
 
-    public static final String NAME = "username";
+    public static final String NAME = SearchManager.SUGGEST_COLUMN_TEXT_1;
 
-    @DatabaseField(generatedId = true)
+    @DatabaseField(generatedId = true, columnName = ID)
     private int id;
     @DatabaseField(columnName = NAME)
     private String name;
 
+    public Material() {
+        super();
+    }
+
     public Material(String name) {
+        super("1" + name);
         this.name = name;
     }
 
