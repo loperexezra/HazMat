@@ -50,7 +50,7 @@
             android:gravity="center_horizontal"
             android:onClick="onClickSearch"
             android:text="@string/lbl_search"
-            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+            hazmat:typeface="fonts/Roboto-Regular.ttf" />
 
         <com.rel.hazmat.widgets.TypefacedButton
             style="@style/ics_button"
@@ -59,24 +59,28 @@
             android:gravity="center_horizontal"
             android:onClick="onClickSearchUnknown"
             android:text="@string/lbl_unknown"
-            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+            hazmat:typeface="fonts/Roboto-Regular.ttf" />
     </LinearLayout>
 
-    <TextView
+    <com.rel.hazmat.widgets.TypefacedTextView
+        android:id="@+id/lblVersion"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:paddingTop="10dip"
         android:text="@string/lbl_version"
         android:textColor="@color/search_label"
-        android:textSize="12dip" />
+        android:textSize="11dip"
+        hazmat:typeface="fonts/Roboto-Regular.ttf" />
 
-    <TextView
+    <com.rel.hazmat.widgets.TypefacedTextView
+        android:id="@+id/lblCopyright"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
         android:text="@string/lbl_copyright"
         android:textColor="@color/search_label"
-        android:textSize="12dip" />
+        android:textSize="11dip"
+        hazmat:typeface="fonts/Roboto-Light.ttf" />
 
 </LinearLayout>

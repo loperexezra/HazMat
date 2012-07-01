@@ -7,7 +7,7 @@
     <string name="search_un_id">or type in UN ID#</string>
     <string name="lbl_search">Search</string>
     <string name="lbl_unknown">Click here if unknown</string>
-    <string name="lbl_version">Version Alpha 3.0</string>
+    <string name="lbl_version">Version Alpha 1.0</string>
     <string name="lbl_copyright">Copyright \u00A9 2011 Metamedia Trading International, Inc.</string>
 
 </resources>

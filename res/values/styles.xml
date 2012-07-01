@@ -5,19 +5,13 @@
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
         <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/selector_edittext</item>
+        <item name="android:background">@drawable/layer_ics_edittext</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 
-    <style name="lbc_add_button">
-        <item name="android:focusable">true</item>
-        <item name="android:focusableInTouchMode">true</item>
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/selector_add_button</item>
-    </style>
 
     <style name="lbc_ics_header_label">
-        <item name="android:textColor">@color/labels</item>
+        <item name="android:textColor">@color/ics_blue_light</item>
         <item name="android:textSize">13dip</item>
         <item name="android:textStyle">bold</item>
         <item name="android:paddingLeft">4dip</item>
@@ -25,7 +19,7 @@
     </style>
 
     <style name="lbc_ics_button_text">
-        <item name="android:textColor">@color/labels</item>
+        <item name="android:textColor">@color/ics_blue_light</item>
         <item name="android:textSize">20dip</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -39,6 +33,12 @@
         <item name="android:singleLine">true</item>
         <item name="android:textColor">@color/ics_textcolor</item>
         <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="ics_textview">
+        
+        
+        
     </style>
 
     <style name="ics_edittext">
