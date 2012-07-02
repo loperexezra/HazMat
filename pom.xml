@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.rel.hazmat</groupId>
+    <artifactId>HazMatGuru</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>apk</packaging>
+    <name>HazMatGuru</name>
+
+    <properties>
+        <platform.version>4.0.1.2</platform.version>
+        <maps.version>15_r2</maps.version>
+        <abs.version>4.0.2</abs.version>
+        <abs.maps.version>4.0.0</abs.maps.version>
+        <roboguice.version>2.0-RC1</roboguice.version>
+        <roboabs.version>1.1</roboabs.version>
+        <android.version>4.0_r3</android.version>
+        <androlog.version>1.0.5</androlog.version>
+        <zbar.version>0.20</zbar.version>
+        <prettytime.version>1.0.8.Final</prettytime.version>
+        <guava.version>r09</guava.version>
+        <jsonlib.version>0.0.1-SNAPSHOT</jsonlib.version>
+        <androidsupport.version>r6</androidsupport.version>
+        <ormlite.version>4.38</ormlite.version>
+        <androidfb.version>1.6</androidfb.version>
+        <maven.android.plugin.version>3.1.1</maven.android.plugin.version>
+        <maven.resources.plugin.version>2.5</maven.resources.plugin.version>
+        <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+        <url>http://test.lobangclub.com/api/json</url>
+        <url.feed>http://test.lobangclub.com:8001/api/</url.feed>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>com.jakewharton</id>
+            <url>http://r.jakewharton.com/maven/release</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Android -->
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>${platform.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Other Libraries -->
+        <dependency>
+            <groupId>org.ocpsoft.prettytime</groupId>
+            <artifactId>prettytime</artifactId>
+            <version>${prettytime.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.roboguice</groupId>
+            <artifactId>roboguice</artifactId>
+            <version>${roboguice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- Database -->
+        <dependency>
+            <groupId>com.j256.ormlite</groupId>
+            <artifactId>ormlite-android</artifactId>
+            <version>${ormlite.version}</version>
+        </dependency>
+
+        <!-- Action Bar -->
+        <dependency>
+            <groupId>com.actionbarsherlock</groupId>
+            <artifactId>library</artifactId>
+            <version>${abs.version}</version>
+            <type>apklib</type>
+        </dependency>
+        <dependency>
+            <groupId>com.github.rtyley</groupId>
+            <artifactId>roboguice-sherlock</artifactId>
+            <version>${roboabs.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>${maven.android.plugin.version}</version>
+                <configuration>
+                    <androidManifestFile>${project.basedir}/AndroidManifest.xml
+                    </androidManifestFile>
+                    <assetsDirectory>${project.basedir}/assets</assetsDirectory>
+                    <resourceDirectory>${project.basedir}/res</resourceDirectory>
+                    <nativeLibrariesDirectory>${project.basedir}/libs
+                    </nativeLibrariesDirectory>
+                    <sdk>
+                        <platform>14</platform>
+                    </sdk>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

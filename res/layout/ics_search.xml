@@ -6,10 +6,26 @@
     android:background="@color/search_background"
     android:orientation="vertical" >
 
-    <ImageView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/banner" />
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
+        android:paddingTop="40dip"
+        android:paddingRight="10dip" >
+
+        <com.rel.hazmat.widgets.TypefacedTextView
+            style="@style/lbc_ics_header_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for Hazardous Materials"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dip"
+            android:background="@color/ics_textcolor" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,8 +92,8 @@
         android:id="@+id/lblCopyright"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
         android:text="@string/lbl_copyright"
         android:textColor="@color/search_label"
         android:textSize="11dip"
