@@ -9,7 +9,6 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
-
     <style name="lbc_ics_header_label">
         <item name="android:textColor">@color/ics_textcolor</item>
         <item name="android:textSize">13dip</item>
@@ -35,11 +34,7 @@
         <item name="android:textSize">15dip</item>
     </style>
 
-    <style name="ics_textview">
-        
-        
-        
-    </style>
+    <style name="ics_textview"></style>
 
     <style name="ics_edittext">
         <item name="android:layout_marginLeft">5dip</item>

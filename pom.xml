@@ -17,6 +17,7 @@
         <roboabs.version>1.1</roboabs.version>
         <android.version>4.0_r3</android.version>
         <androlog.version>1.0.5</androlog.version>
+        <csv.version>2.0</csv.version>
         <zbar.version>0.20</zbar.version>
         <prettytime.version>1.0.8.Final</prettytime.version>
         <guava.version>r09</guava.version>
@@ -61,6 +62,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.javacsv</groupId>
+            <artifactId>javacsv</artifactId>
+            <version>${csv.version}</version>
         </dependency>
 
         <!-- Database -->

@@ -1,0 +1,32 @@
+name,chemical,state
+Acetaldehyde,CH3CHO,Liquid or Gas
+Acetic Acid,CH3COOH,Liquid/Solid
+Acetic Anhydride,(CH3CO)2O,Liquid
+Acetone,(CH3)2CO,Liquid
+Acetone Cyanohydrin,CH3C(OH)CNCH3,Liquid
+Acetonitrile ,CH3CN,Liquid
+Acetylene,HC=CH,Gas
+Acrylamide,CH2=CHCONH2,Solid
+Acrolein, CH2=CHCHO,Liquid
+Acrylic Acid,CH2=CHCOOH,Liquid/Solid
+Allyl Alcohol,CH2=CHCH2OH,Liquid
+Allyl Chloride,CH2=CHCH2Cl,Liquid
+Ammonia,NH3,Gas
+Arsine,AsH3,Gas
+Boron Trifluoride,Bf3,Gas
+Carbon Disulfide,CS2,Liquid
+Chlorine ,Cl2,Gas (shipped as liquified compressed gas)
+Diborane ,B2H6,Gas
+Ethylene oxide,C2H4O,Gas or Liquid <51F
+Fluorine,F2,Gas
+Formaldehyde,HCHO,Gas
+Hydrogen bromide ,HBr,Gas
+Hydrogen chloride ,HCl,Gas
+Hydrogen cyanide,HCN,Liquid or Gas >78
+Hydrogen fluoride,HF,Gas or Liquid <67
+Hydrogen sulfide,H2S,Gas
+"Nitric acid, fuming",HNO3,Liquid
+Phosgene,COCl2,Gas
+Phosphorus trichloride,PCl3,Liquid
+Sulfur dioxide,SO2,Gas
+Sulfuric acid,H2SO4,Liquid

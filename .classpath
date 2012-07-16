@@ -41,6 +41,7 @@
   <classpathentry kind="var" path="M2_REPO/com/google/inject/guice/3.0/guice-3.0-no_aop.jar"/>
   <classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/r09/guava-r09.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/j256/ormlite/ormlite-android/4.38/ormlite-android-4.38.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/j256/ormlite/ormlite-core/4.38/ormlite-core-4.38.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/android/support-v4/r7/support-v4-r7.jar"/>

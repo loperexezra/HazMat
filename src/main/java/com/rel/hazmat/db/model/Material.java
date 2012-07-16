@@ -20,7 +20,7 @@ public class Material extends DBModel {
     }
 
     public Material(String name) {
-        super("1" + name);
+        super(name);
         this.name = name;
     }
 

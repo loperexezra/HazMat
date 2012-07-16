@@ -21,7 +21,7 @@ public abstract class GenericDAO<T extends DBModel> {
     }
 
     public boolean exists(String slug) throws NullSlugException {
-        Log.i("GenericDAO", "Checking if retailer slug exists : " + slug);
+        Log.i("GenericDAO", "Checking if object slug exists : " + slug);
         if (!Strings.isNullOrEmpty(slug)) {
             if (getItemUsingSlug(slug) != null) {
                 return true;
@@ -33,7 +33,7 @@ public abstract class GenericDAO<T extends DBModel> {
     }
 
     public T save(T t) throws NullSlugException {
-        Log.i("GenericDAO", "Recieved retailer with slug" + t.getSlug()
+        Log.i("GenericDAO", "Recieved object with slug" + t.getSlug()
                 + " number of entries");
         T resultModel = null;
         try {
@@ -50,7 +50,7 @@ public abstract class GenericDAO<T extends DBModel> {
     }
 
     public void save(List<T> modelList) throws NullSlugException {
-        Log.i("GenericDAO", "Recieved retailer list with " + modelList.size()
+        Log.i("GenericDAO", "Recieved object list with " + modelList.size()
                 + " number of entries");
         if ((modelList.size() != 0) && (dao != null)) {
             for (T t : modelList) {
@@ -58,7 +58,7 @@ public abstract class GenericDAO<T extends DBModel> {
             }
         } else if (modelList.size() == 0) {
             Log.e("GenericDAO",
-                    "You gave an empty retailer list to the method addRetailerList");
+                    "You gave an empty object list to the method save");
         } else {
             Log.e("GenericDAO",
                     "You gave an empty dao to this object, list was not cached");

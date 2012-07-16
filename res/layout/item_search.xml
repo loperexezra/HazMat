@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hazmat="http://schemas.android.com/apk/res/com.rel.hazmat"
+    android:layout_width="fill_parent"
+    android:layout_height="48dip"
+    android:background="@drawable/selector_search_item"
+    android:orientation="vertical"
+    android:padding="4dip"
+    android:paddingLeft="4dip" >
+
+    <com.rel.hazmat.widgets.TypefacedTextView
+        android:id="@+id/lblChemicalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tetrahydrocannabinol"
+        android:textSize="14dip"
+        hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+    <com.rel.hazmat.widgets.TypefacedTextView
+        android:id="@+id/lblFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CH3CHO"
+        android:textSize="14dip"
+        hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+</LinearLayout>

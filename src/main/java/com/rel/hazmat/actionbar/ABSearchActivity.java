@@ -1,11 +1,9 @@
 package com.rel.hazmat.actionbar;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.Window;
 import android.widget.Toast;
 
+import com.actionbarsherlock.view.MenuItem;
 import com.rel.hazmat.HazMatBaseActivity;
 import com.rel.hazmat.R;
 import com.rel.hazmat.tasks.contracts.IProgressLoader;
@@ -25,7 +23,6 @@ public class ABSearchActivity extends HazMatBaseActivity implements
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setTheme(R.style.Theme_Sherlock_Light_ForceOverflow);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }

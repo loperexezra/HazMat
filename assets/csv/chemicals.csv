@@ -1,0 +1,33 @@
+name,formula,states,dot_no,molecular_weight,solubility,flash_point,ionization,gravity,vapor_pressure,UEL,LEL,IDLH,REL,PEL
+Acetaldehyde,CH3CHO,Liquid or Gas,1089,44.1,Miscible,-36,10.22 eV,0.79,740 mmHg,60,4,Ca [2000pm],Ca ,TWA 200 ppm
+Acetic Acid,CH3COOH,Liquid/Solid,2790,60.1,Miscible,103,10.66 eV,1.05,11 mmHg,19.9,4,50 ppm,10 ppm ,10 ppm
+Acetic Anhydride,(CH3CO)2O,Liquid,1715,103.1,12%,120,10.00 eV,1.08,4mmHg,10.3,2.7,200ppm,C 5ppm ,TWA 5ppm
+Acetone,(CH3)2CO,Liquid,1090,58.1,Miscible,0,9.69 eV,0.79,190 mmHg,12.8,2.5,2500 ppm,TWA 250 ppm ,TWA 1000 ppm
+Acetone Cyanohydrin,CH3C(OH)CNCH3,Liquid,1541,85.1,Miscible,165,?,0.93,.8 mmHg,12,2.2,N.D.,C 1ppm,none
+Acetonitrile ,CH3CN,Liquid,1648,41.1,Miscible,42,12.2 eV,0.78,73 mmHg,16,3,500ppm,TWA 20 ppm,TWA 40 ppm
+Acetylene,HC=CH,Gas,1001,26,2%,NA,11.4 eV,0.91,44.2 atm,100,2.5,N.D.,C 2500 ppm,none
+Acrylamide,CH2=CHCONH2,Solid,2074,71.1,216%,280,9.50eV,1.12,.007 mmHg,?,?,Ca [60mg/m3],Ca TWA .03 mg/m3,TWA .3 mg/m3
+Acrolein, CH2=CHCHO,Liquid,1092,56.1,40%,-15,10.13 eV,0.84,210 mmHg,31,2.8,2 ppm,TWA .1 ppm ST .3 ppm,TWA .1 ppm
+Acrylic Acid,CH2=CHCOOH,Liquid/Solid,2218,72.1,Miscible,121,?,1.05,3 mmHg,8.02,2.4,N.D.,TWA 2 ppm,none
+Allyl Alcohol,CH2=CHCH2OH,Liquid,1098,58.1,Miscible,70,9.63 eV,0.85,17 mmHg,18,2.5,20 ppm,TWA 2 ppm ST 4 ppm,TWA 2 ppm
+Allyl Chloride,CH2=CHCH2Cl,Liquid,1100,76.5,0.40%,-25,10.05 eV,0.94,295 mmHg,11.1,2.9,250 ppm,TWA 1 ppm ST 2 ppm,TWA 1 ppm
+Ammonia,NH3,Gas,1005,17,34%,NA,10.18 eV,,8.5 atm,28,15,300 ppm,TWA 25 ppm ST 35 ppm,TWA 50 ppm
+Arsine,AsH3,Gas,2188,78,20%,NA,9.89 eV,,14.9 atm,78%,5.1,Ca [3 ppm],Ca C .002mg/3,TWA .05 ppm
+Boron Trifluoride,Bf3,Gas,1008,67.8,106%,NA,15.50 eV,,>50 atm,NA,NA,NA,C 1 ppm,C 1 ppm
+Carbon Disulfide,CS2,Liquid,1131,76.1,0.30%,-22,10.08 eV,1.26,297 mmHg,50,1.3,500 ppm,TWA 1 ppm ST 10 ppm,TWA 20 ppm C 30 ppm 100 ppm
+Chlorine ,Cl2,Gas (shipped as liquified compressed gas),1017,70.9,0.70%,NA,11.48 eV,,6.8 atm,NA,NA,10 ppm,C 0.5 ppm,C 1 ppm
+Diborane ,B2H6,Gas,1911,27.7,Reacts,NA,11.38 eV,,39.5 atm,88,0.8,15 ppm,TWA 0.1 ppm,TWA .1 ppm
+Ethylene oxide,C2H4O,Gas or Liquid <51F,1040,44.1,Miscible,NA (GAS) -20 LIQUID,10.56 eV,0.82 (liquid at 50F,1.46 atm,100,3,Ca 800 ppm,Ca TWA <0.1 ppm,TWA 1 ppm
+Fluorine,F2,Gas,1045,38,Reacts,NA,15.7 eV,,>1 atm,NA,NA,25 ppm,TWA .1 ppm,TWA .1 ppm
+Formaldehyde,HCHO,Gas,,30,Miscible,NA,10.88 eV,,>1 atm,73%,7,Ca [20 ppm],TWA .016ppm,TWA .75 ppm
+Hydrogen bromide ,HBr,Gas,1048,80.9,49%,NA,11.62 eV,,20 atm,NA,NA,30 ppm,C 3 ppm,TWA 3 ppm
+Hydrogen chloride ,HCl,Gas,1050,36.5,67%,NA,12.74 eV,,40.5 atm,NA,NA,50 ppm,C 5 ppm,C 5 ppm
+Hydrogen cyanide,HCN,Liquid or Gas >78,1051,27,Miscible,0,13.6 eV,0.69,630 mmHg,40,5.6,50 ppm,ST 4.7 ppm,TWA 10 ppm
+Hydrogen fluoride,HF,Gas or Liquid <67,1052,20,Miscible,NA,15.98 eV,1.00 (liquid),783 mmHg,NA,NA,30 ppm,TWA 3 ppm,TWA 3 ppm
+Hydrogen sulfide,H2S,Gas,1053,34.1,0.40%,NA,10.46 eV,,17.6 atm,44,4,100 ppm,C 10 ppm,C 20 ppm
+"Nitric acid, fuming",HNO3,Liquid,2032,63,Miscible,NA,11.95 eV,1.5,48 mmHg,NA,NA,25 ppm,TWA 2 ppm,TWA 2 ppm
+Phosgene,COCl2,Gas,1076,98.9,Slight,NA,11.55 eV,,1.6 atm,NA,NA,2 ppm,TWA .1 ppm,TWA .1
+Phosphorus trichloride,PCl3,Liquid,1809,137.4,Reacts,NA,9.91 eV,1.58,100 mmHg,NA,NA,25 ppm,TWA .2 ppm,TWA .5 ppm
+Sulfur dioxide,SO2,Gas,1079,64.1,10%,NA,12.30 eV,,3.2 atm,NA,NA,100 ppm,TWA 2 ppm,TWA 5 ppm
+Sulfuric acid,H2SO4,Liquid,1830,98.1,Miscible,NA,?,1.84,0.001 mmHg,NA,NA,15 mg/m3,TWA 1 mh/m3,TWA 1mg/m3
+Tungsten hexafluoride,,,,,,,,,,,,,,

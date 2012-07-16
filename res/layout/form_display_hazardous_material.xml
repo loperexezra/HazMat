@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroller"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:hazmat="http://schemas.android.com/apk/res/com.rel.hazmat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/search_background"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <com.rel.hazmat.widgets.TypefacedTextView
+            style="@style/lbc_ics_header_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="General Information"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/ics_textcolor" />
+
+        <ListView
+            android:id="@+id/lvwGeneralInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:gravity="center_vertical" />
+
+        <com.rel.hazmat.widgets.TypefacedTextView
+            style="@style/lbc_ics_header_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Properties"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/ics_textcolor" />
+
+        <ListView
+            android:id="@+id/lvwProperties"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" />
+
+        <com.rel.hazmat.widgets.TypefacedTextView
+            style="@style/lbc_ics_header_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Limits"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/ics_textcolor" />
+
+        <ListView
+            android:id="@+id/lvwLimits"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+</ScrollView>

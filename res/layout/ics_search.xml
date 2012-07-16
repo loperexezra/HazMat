@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="10dip"
-        android:paddingTop="40dip"
-        android:paddingRight="10dip" >
+        android:paddingRight="10dip"
+        android:paddingTop="60dip" >
 
         <com.rel.hazmat.widgets.TypefacedTextView
             style="@style/lbc_ics_header_label"
@@ -37,10 +37,11 @@
         android:padding="16dip" >
 
         <com.rel.hazmat.widgets.TypefacedEditText
-            android:id="@+id/edtChemicalName"
+            android:id="@+id/edtSearchName"
             style="@style/ics_edittext"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
             android:hint="@string/search_chemical_name"
             hazmat:typeface="fonts/Roboto-Light.ttf" />
 
@@ -52,7 +53,7 @@
         <!-- android:textColor="@color/search_label" /> -->
 
         <com.rel.hazmat.widgets.TypefacedEditText
-            android:id="@+id/edtUNID"
+            android:id="@+id/edtSearchUNID"
             style="@style/ics_edittext"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -63,6 +64,7 @@
             style="@style/ics_button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
             android:gravity="center_horizontal"
             android:onClick="onClickSearch"
             android:text="@string/lbl_search"
@@ -78,25 +80,35 @@
             hazmat:typeface="fonts/Roboto-Regular.ttf" />
     </LinearLayout>
 
-    <com.rel.hazmat.widgets.TypefacedTextView
-        android:id="@+id/lblVersion"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/lbl_version"
-        android:textColor="@color/search_label"
-        android:textSize="11dip"
-        hazmat:typeface="fonts/Roboto-Regular.ttf" />
+        android:layout_height="0dip"
+        android:layout_marginBottom="70dip"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="vertical" >
 
-    <com.rel.hazmat.widgets.TypefacedTextView
-        android:id="@+id/lblCopyright"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="center_horizontal"
-        android:text="@string/lbl_copyright"
-        android:textColor="@color/search_label"
-        android:textSize="11dip"
-        hazmat:typeface="fonts/Roboto-Light.ttf" />
+        <com.rel.hazmat.widgets.TypefacedTextView
+            android:id="@+id/lblVersion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:text="@string/lbl_version"
+            android:textColor="@color/search_label"
+            android:textSize="11dip"
+            hazmat:typeface="fonts/Roboto-Regular.ttf" />
+
+        <com.rel.hazmat.widgets.TypefacedTextView
+            android:id="@+id/lblCopyright"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:text="@string/lbl_copyright"
+            android:textColor="@color/search_label"
+            android:textSize="11dip"
+            hazmat:typeface="fonts/Roboto-Light.ttf" />
+    </LinearLayout>
 
 </LinearLayout>
