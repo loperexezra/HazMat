@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:textColor="@color/white"
         android:paddingLeft="5dip"
         android:text="Lobangs added"
         hazmat:typeface="fonts/Roboto-Medium.ttf" />
@@ -23,6 +24,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:background="@drawable/shape_number_container"
+        android:textColor="@color/black"
         android:gravity="center"
         android:padding="10dip"
         android:text="5"

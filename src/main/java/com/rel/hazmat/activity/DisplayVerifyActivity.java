@@ -7,8 +7,9 @@ import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListAdapter;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.actionbarsherlock.view.Window;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
@@ -25,10 +26,14 @@ import com.rel.hazmat.dto.ListViewDTO;
  * @author Lope Chupijay Emano
  * 
  */
-public class DisplayActivity extends RoboSherlockActivity {
+public class DisplayVerifyActivity extends RoboSherlockActivity {
     public static final String TAG = "DisplayActivity";
     public static final String MATERIAL_SLUG = "material_slug";
     public static final String SEARCH_QUERY = "search_query";
+
+    public static final String GENERAL_INFO = "General Info";
+    public static final String PROPERTIES = "Properties";
+    public static final String LIMITS = "Limits";
 
     // General Information
     protected final static String NAME = "Name";
@@ -53,11 +58,6 @@ public class DisplayActivity extends RoboSherlockActivity {
 
     @InjectView(R.id.lvwGeneralInfo)
     protected ListView lvwGeneralInfo;
-//    @InjectView(R.id.lvwProperties)
-//    protected ListView lvwProperties;
-//    @InjectView(R.id.lvwLimits)
-//    protected ListView lvwLimits;
-
     protected String query;
     protected String chemicalSlug;
 
@@ -69,7 +69,7 @@ public class DisplayActivity extends RoboSherlockActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("HazMat Guru");
+        getSupportActionBar().setTitle("Verify");
         initForm();
     }
 
@@ -89,10 +89,10 @@ public class DisplayActivity extends RoboSherlockActivity {
     public boolean onOptionsItemSelected(
             com.actionbarsherlock.view.MenuItem item) {
         super.onOptionsItemSelected(item);
-        if (item.getTitle().equals(getString(R.string.app_name))) {
+        if (item.getTitle().equals(getSupportActionBar().getTitle().toString())) {
             Intent intent = new Intent();
             if (!Strings.isNullOrEmpty(query)) {
-                intent.setClass(this, SearchResultActivity.class);
+                intent.setClass(this, ViewChoicesActivity.class);
                 intent.putExtra(ViewChoicesActivity.SEARCH_QUERY, query);
                 intent.putExtra(ViewChoicesActivity.MATERIAL_SLUG, chemicalSlug);
             } else {
@@ -108,44 +108,59 @@ public class DisplayActivity extends RoboSherlockActivity {
         HazardousMaterial material = materialDAO.getItemUsingSlug(chemicalSlug);
         Log.i(TAG, "Received material from DB : " + material.getName());
         if (material != null) {
-            initGeneralInfo(material.getName(), material.getFormula(),
-                    material.getStates(), material.getDotNo());
-            initProperties(material.getMolecularWeight(),
-                    material.getSolubility(), material.getIonizationPressure(),
-                    material.getGravity());
-            initLimits(material.getFlashPoint(), material.getUel(),
-                    material.getLel(), material.getIdlh(), material.getRel(),
-                    material.getPel());
+            initGeneralInfo(material);
         }
     }
 
-    protected void initGeneralInfo(String name, String formula, String state,
-            String DOTnum) {
+    protected void initGeneralInfo(HazardousMaterial material) {
+        View headerGeneralInfo = (View) getLayoutInflater().inflate(
+                R.layout.item_header, null);
+        TextView lblHeader = (TextView) headerGeneralInfo
+                .findViewById(R.id.lblHeader);
+        lblHeader.setText(GENERAL_INFO);
+//        lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
-        generalInfoDTOList.add(new ListViewDTO(NAME, name));
-        generalInfoDTOList.add(new ListViewDTO(FORMULA, formula));
-        generalInfoDTOList.add(new ListViewDTO(STATE, state));
-        generalInfoDTOList.add(new ListViewDTO(DOT, DOTnum));
-        ListAdapter listAdapter = new BoxedValueAdapter(this,
+        generalInfoDTOList.add(new ListViewDTO(NAME, material.getName()));
+        generalInfoDTOList.add(new ListViewDTO(FORMULA, material.getFormula()));
+        generalInfoDTOList.add(new ListViewDTO(STATE, material.getStates()));
+        generalInfoDTOList.add(new ListViewDTO(DOT, material.getDotNo()));
+        BoxedValueAdapter listAdapter = new BoxedValueAdapter(this,
                 generalInfoDTOList);
+        initProperties(listAdapter, material.getMolecularWeight(),
+                material.getSolubility(), material.getIonizationPressure(),
+                material.getGravity());
+        initLimits(listAdapter, material.getFlashPoint(), material.getUel(),
+                material.getLel(), material.getIdlh(), material.getRel(),
+                material.getPel());
         lvwGeneralInfo.setAdapter(listAdapter);
     }
 
-    protected void initProperties(String molecularWeight, String solubility,
-            String ionPressure, String gravity) {
+    protected void initProperties(BoxedValueAdapter listAdapter,
+            String molecularWeight, String solubility, String ionPressure,
+            String gravity) {
+        View headerGeneralInfo = (View) getLayoutInflater().inflate(
+                R.layout.item_header, null);
+        TextView lblHeader = (TextView) headerGeneralInfo
+                .findViewById(R.id.lblHeader);
+        lblHeader.setText(PROPERTIES);
+//        lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> propertiesDTOList = new ArrayList<ListViewDTO>();
         propertiesDTOList
                 .add(new ListViewDTO(MOLECULAR_WEIGHT, molecularWeight));
         propertiesDTOList.add(new ListViewDTO(SOLUBILITY, solubility));
         propertiesDTOList.add(new ListViewDTO(ION_PRESSURE, ionPressure));
         propertiesDTOList.add(new ListViewDTO(GRAVITY, gravity));
-        ListAdapter popularityListAdapter = new BoxedValueAdapter(this,
-                propertiesDTOList);
-//        lvwProperties.setAdapter(popularityListAdapter);
+        listAdapter.addAll(propertiesDTOList);
     }
 
-    protected void initLimits(String flashPoint, String uel, String lel,
-            String idlh, String rel, String pel) {
+    protected void initLimits(BoxedValueAdapter listAdapter, String flashPoint,
+            String uel, String lel, String idlh, String rel, String pel) {
+        View headerGeneralInfo = (View) getLayoutInflater().inflate(
+                R.layout.item_header, null);
+        TextView lblHeader = (TextView) headerGeneralInfo
+                .findViewById(R.id.lblHeader);
+        lblHeader.setText(LIMITS);
+//        lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> limitsDTOList = new ArrayList<ListViewDTO>();
         limitsDTOList.add(new ListViewDTO(FLASH_POINT, flashPoint));
         limitsDTOList.add(new ListViewDTO(UEL, uel + "%"));
@@ -153,9 +168,7 @@ public class DisplayActivity extends RoboSherlockActivity {
         limitsDTOList.add(new ListViewDTO(IDLH, idlh));
         limitsDTOList.add(new ListViewDTO(REL, rel));
         limitsDTOList.add(new ListViewDTO(PEL, pel));
-        ListAdapter basicInfoListAdapter = new BoxedValueAdapter(this,
-                limitsDTOList);
-//        lvwLimits.setAdapter(basicInfoListAdapter);
+        listAdapter.addAll(limitsDTOList);
     }
 
 }

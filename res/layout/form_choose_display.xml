@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hazmat="http://schemas.android.com/apk/res/com.rel.hazmat"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bmp_diamond_plate"
+    android:orientation="vertical" >
+
+    <com.rel.hazmat.widgets.TypefacedTextView
+        android:id="@+id/lblChemicalName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:gravity="center_horizontal"
+        android:text="Carbon Dioxide"
+        android:textColor="@color/ics_headers"
+        android:textSize="20dip"
+        hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+    <com.rel.hazmat.widgets.TypefacedTextView
+        android:id="@+id/lblFormula"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="CO2"
+        android:textColor="@color/ics_gray"
+        android:textSize="20dip"
+        hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@color/ics_container"
+        android:orientation="vertical"
+        android:padding="16dip" >
+
+        <com.rel.hazmat.widgets.TypefacedButton
+            style="@style/ics_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="onClickRescue"
+            android:text="Rescue"
+            hazmat:typeface="fonts/Roboto-Bold.ttf" />
+
+        <com.rel.hazmat.widgets.TypefacedButton
+            style="@style/ics_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:onClick="onClickPlumbing"
+            android:text="Plumbing"
+            hazmat:typeface="fonts/Roboto-Bold.ttf" />
+
+        <com.rel.hazmat.widgets.TypefacedButton
+            style="@style/ics_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:onClick="onClickVerify"
+            android:text="Verify"
+            hazmat:typeface="fonts/Roboto-Bold.ttf" />
+    </LinearLayout>
+
+</LinearLayout>

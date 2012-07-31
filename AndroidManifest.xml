@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rel.hazmat"
-    android:versionCode="7"
-    android:versionName="1.0-SNAPSHOT" >
+    android:versionCode="11"
+    android:versionName="1.0-RC-1" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="10" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-library android:name="com.actionbarsherlock" />
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Sherlock.Light" >
-        <activity android:name=".activity.ICSSearchActivity" >
+        android:theme="@style/hazmatTheme" >
+        <activity android:name="net.hockeyapp.android.UpdateActivity" />
+        <activity android:name=".activity.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ICSSearchActivity" >
+        </activity>
         <activity android:name=".activity.SearchResultActivity" >
         </activity>
-        <activity android:name=".activity.DisplayActivity" >
+        <activity android:name=".activity.DisplayRescueActivity" >
+        </activity>
+        <activity android:name=".activity.DisplayVerifyActivity" >
+        </activity>
+        <activity android:name=".activity.DisplayPlumbingActivity" >
+        </activity>
+        <activity android:name=".activity.ViewChoicesActivity" >
+        </activity>
+        <activity android:name=".activity.SOGActivity" >
         </activity>
     </application>
 

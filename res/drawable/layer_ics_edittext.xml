@@ -3,7 +3,7 @@
 
     <item>
         <shape>
-            <solid android:color="@color/ics_edittext" />
+            <solid android:color="@color/ics_edittext_drawable" />
         </shape>
     </item>
 
@@ -13,14 +13,14 @@
         android:left="1px"
         android:right="1px">
         <shape>
-            <solid android:color="@color/search_background_container" />
+            <solid android:color="@color/black" />
         </shape>
     </item>
 
     <!-- draw another block to cut-off the left and right bars -->
     <item android:bottom="5dip">
         <shape>
-            <solid android:color="@color/search_background_container" />
+            <solid android:color="@color/black" />
         </shape>
     </item>
 

@@ -22,7 +22,7 @@ public class TypefacedTextView extends TextView {
         TypedArray styledAttrs = context.obtainStyledAttributes(attrs,
                 R.styleable.TypefacedTextView);
         String fontName = styledAttrs
-                .getString(R.styleable.TypefacedTextView_typeface); 
+                .getString(R.styleable.TypefacedTextView_typeface);
         styledAttrs.recycle();
 
         if (fontName != null) {

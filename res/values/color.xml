@@ -26,6 +26,9 @@
     <color name="ics_blue_light_light">#D8EDF4</color>
     <color name="ics_gray">#D6D6D6</color>
     <color name="ics_gray_dark">#4D4D4D</color>
+    <color name="transparent_white">#20FFFFFF</color>
+    <color name="transparent_black">#97000000</color>
+    <color name="ics_container">@color/transparent_black</color>
     <color name="search_label">@color/gray_dark</color>
     <color name="search_background_container">@color/ics_blue_light_light</color>
     <color name="search_background">@color/white_gray</color>
@@ -33,8 +36,11 @@
     <color name="display_background_header">@color/red_dark</color>
     <color name="display_text">@color/red_dark</color>
     <color name="dark_blue">#0099CC</color>
-    <color name="ics_edittext">@color/dark_blue</color>
+    <color name="ics_edittext">@color/ics_gray_dark</color>
+    <color name="ics_button">@color/black</color>
     <color name="ics_textcolor">@color/ics_gray_dark</color>
+    <color name="ics_edittext_drawable">@color/ics_blue_light</color>
+    <color name="ics_headers">@color/ics_blue_light</color>
     <color name="application_background">@color/black</color>
 
 </resources>

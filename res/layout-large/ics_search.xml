@@ -46,7 +46,7 @@
             android:textColorHighlight="@color/ics_edittext"
             android:textColorHint="@color/ics_edittext"
             android:textColorLink="@color/ics_edittext"
-            android:textSize="17dip"
+            android:textSize="25dip"
             hazmat:typeface="fonts/Roboto-Light.ttf" />
 
         <!-- <AutoCompleteTextView -->
@@ -66,7 +66,7 @@
             android:textColorHighlight="@color/ics_edittext"
             android:textColorHint="@color/ics_edittext"
             android:textColorLink="@color/ics_edittext"
-            android:textSize="17dip"
+            android:textSize="25dip"
             hazmat:typeface="fonts/Roboto-Light.ttf" />
 
         <com.rel.hazmat.widgets.TypefacedButton

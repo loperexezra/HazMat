@@ -13,20 +13,20 @@ public class HazardousMaterial extends DBModel {
     public static final String NAME = "chemical_name";
     public static final String FORMULA = "chemical_formula";
     // General Information
-    protected final static String STATE = "state";
-    protected final static String DOT_NO = "dot";
+    public final static String STATE = "state";
+    public final static String DOT_NO = "dot";
     // Properties
-    protected final static String MOLECULAR_WEIGHT = "molecular_weight";
-    protected final static String SOLUBILITY = "solubility";
-    protected final static String ION_PRESSURE = "ion_pressure";
-    protected final static String GRAVITY = "gravity";
+    public final static String MOLECULAR_WEIGHT = "molecular_weight";
+    public final static String SOLUBILITY = "solubility";
+    public final static String ION_PRESSURE = "ion_pressure";
+    public final static String GRAVITY = "gravity";
     // Limits
-    protected final static String FLASH_POINT = "flash_point";
-    protected final static String UEL = "UEL";
-    protected final static String LEL = "LEL";
-    protected final static String IDLH = "IDLH";
-    protected final static String REL = "REL";
-    protected final static String PEL = "PEL";
+    public final static String FLASH_POINT = "flash_point";
+    public final static String UEL = "UEL";
+    public final static String LEL = "LEL";
+    public final static String IDLH = "IDLH";
+    public final static String REL = "REL";
+    public final static String PEL = "PEL";
     @DatabaseField(generatedId = true, columnName = ID)
     private int id;
     @DatabaseField(columnName = NAME)
@@ -74,6 +74,29 @@ public class HazardousMaterial extends DBModel {
             String flashPoint, String uel, String lel, String idlh, String rel,
             String pel) {
         super(slug);
+        this.name = name;
+        this.formula = formula;
+        this.states = states;
+        this.dotNo = dotNo;
+        this.molecularWeight = molecularWeight;
+        this.solubility = solubility;
+        this.ionizationPressure = ionizationPressure;
+        this.gravity = gravity;
+        this.flashPoint = flashPoint;
+        this.uel = uel;
+        this.lel = lel;
+        this.idlh = idlh;
+        this.rel = rel;
+        this.pel = pel;
+    }
+    
+    public HazardousMaterial(Integer id, String slug, String name, String formula,
+            String states, String dotNo, String molecularWeight,
+            String solubility, String ionizationPressure, String gravity,
+            String flashPoint, String uel, String lel, String idlh, String rel,
+            String pel) {
+        super(slug);
+        this.id = id;
         this.name = name;
         this.formula = formula;
         this.states = states;

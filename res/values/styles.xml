@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Custom abs theme -->
+
+    <style name="hazmatTheme" parent="Theme.Sherlock.Light">
+        <item name="android:actionBarStyle">@style/hazmatTheme.ActionBarStyle</item>
+        <item name="actionBarStyle">@style/hazmatTheme.ActionBarStyle</item>
+        <item name="absForceOverflow">true</item>
+    </style>
+
+    <style name="hazmatTheme.ActionBarStyle" parent="Widget.Sherlock.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/hazmatTheme.ActionBar.TitleTextStyle</item>
+        <item name="titleTextStyle">@style/hazmatTheme.ActionBar.TitleTextStyle</item>
+        <item name="background">@drawable/bmp_plain</item>
+        <item name="backgroundStacked">@drawable/bmp_plain</item>
+        <item name="backgroundSplit">@drawable/abs__ab_bottom_transparent_light_holo</item>
+        <item name="itemPadding">1dip</item>
+    </style>
+
+    <style name="hazmatTheme.ActionBar.TitleTextStyle" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="lbc_edittext" parent="@android:style/Widget.EditText">
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
@@ -10,8 +31,8 @@
     </style>
 
     <style name="lbc_ics_header_label">
-        <item name="android:textColor">@color/ics_textcolor</item>
-        <item name="android:textSize">13dip</item>
+        <item name="android:textColor">@color/ics_headers</item>
+        <item name="android:textSize">15dip</item>
         <item name="android:textStyle">bold</item>
         <item name="android:paddingLeft">4dip</item>
         <item name="android:paddingBottom">4dip</item>
@@ -30,7 +51,7 @@
         <item name="android:background">@drawable/selector_ics_button</item>
         <item name="android:padding">5dip</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textColor">@color/ics_textcolor</item>
+        <item name="android:textColor">@color/ics_button</item>
         <item name="android:textSize">15dip</item>
     </style>
 
@@ -45,7 +66,7 @@
         <item name="android:paddingLeft">5dip</item>
         <item name="android:singleLine">true</item>
         <item name="android:textSize">15dip</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/ics_edittext</item>
     </style>
 
 </resources>

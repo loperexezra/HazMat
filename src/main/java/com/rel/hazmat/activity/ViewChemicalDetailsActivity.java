@@ -1,19 +1,9 @@
 package com.rel.hazmat.activity;
 
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.List;
-
-import roboguice.inject.InjectView;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.common.base.Strings;
-import com.google.inject.Inject;
 import com.rel.hazmat.R;
 import com.rel.hazmat.db.model.HazardousMaterial;
 

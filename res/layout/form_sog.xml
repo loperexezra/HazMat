@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hazmat="http://schemas.android.com/apk/res/com.rel.hazmat"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bmp_diamond_plate" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.rel.hazmat.widgets.TypefacedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="30dip"
+            android:text="RED 1"
+            android:textColor="@color/red_dark"
+            android:textSize="25dip"
+            hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="30dip" >
+
+            <com.rel.hazmat.widgets.TypefacedTextView
+                style="@style/lbc_ics_header_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Standard Operating Guidelines"
+                hazmat:typeface="fonts/Roboto-Medium.ttf" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dip"
+                android:background="@color/ics_headers" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dip"
+            android:background="@color/ics_container"
+            android:orientation="vertical"
+            android:padding="16dip" >
+
+            <com.rel.hazmat.widgets.SOGTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALWAYS wear your turnout gear with self-contained breathing apparatus"
+                android:textColor="@color/ics_gray"
+                android:textSize="15dip"
+                hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+            <com.rel.hazmat.widgets.SOGTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dip"
+                android:text="If the material&apos;s radiation is less than 2x the background radiation you have a GO"
+                android:textColor="@color/ics_gray"
+                android:textSize="15dip"
+                hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+            <com.rel.hazmat.widgets.SOGTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dip"
+                android:text="If the F Paper changes to yellow then you have a NO GO"
+                android:textColor="@color/ics_gray"
+                android:textSize="15dip"
+                hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+            <com.rel.hazmat.widgets.SOGTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dip"
+                android:text="If the PH Paper&apos;s color changes then you have a GO"
+                android:textColor="@color/ics_gray"
+                android:textSize="15dip"
+                hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+            <com.rel.hazmat.widgets.SOGTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dip"
+                android:text="If the Temperature Gun&apos;s reading ↑ then you have a GO"
+                android:textColor="@color/ics_gray"
+                android:textSize="15dip"
+                hazmat:typeface="fonts/Roboto-Light.ttf" />
+
+            <com.rel.hazmat.widgets.SOGTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dip"
+                android:text="If the Combustion Gas Indicator is less than 10% of LEL then you have a GO"
+                android:textColor="@color/ics_gray"
+                android:textSize="15dip"
+                hazmat:typeface="fonts/Roboto-Light.ttf" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

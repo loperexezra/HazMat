@@ -42,6 +42,10 @@ public class BoxedValueAdapter extends BaseAdapter {
         // TODO Auto-generated method stub
         return 0;
     }
+    
+    public void addAll(List<ListViewDTO> activityDTOList){
+        this.activityDTOList.addAll(activityDTOList);
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

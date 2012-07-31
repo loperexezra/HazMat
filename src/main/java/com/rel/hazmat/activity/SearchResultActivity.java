@@ -36,6 +36,7 @@ public class SearchResultActivity extends ABSearchActivity implements
         IAMSearchActivity, ISearchMaterialTask {
     public static final String TAG = "SearchResultActivity";
     public static final String SEARCH_QUERY = "search_query";
+
     @Inject
     protected HazardousMaterialDAO materialDAO;
     @Inject
@@ -44,8 +45,7 @@ public class SearchResultActivity extends ABSearchActivity implements
     protected ListView lvwChemicals;
 
     protected ChemicalSearchResultAdapter adapter;
-
-    // protected AMSearchActivity callback;
+    protected String query;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,15 +56,12 @@ public class SearchResultActivity extends ABSearchActivity implements
     }
 
     public void initForm() {
-        // callback = new AMSearchActivity(this);
         lvwChemicals.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                     int position, long id) {
                 SearchDTO selectedItem = adapter.getItem(position);
                 Log.i("SearchResultActivity", "Selected product slug: "
                         + selectedItem.getChemicalName());
-                // callback.setSearchDTO(selectedItem);
-                // startActionMode(callback);
                 displayMaterial(selectedItem.getSlug());
             }
         });
@@ -75,6 +72,7 @@ public class SearchResultActivity extends ABSearchActivity implements
             Log.i(TAG, "received search query from extra" + chemicalSlug);
             if (!Strings.isNullOrEmpty(chemicalSlug)) {
                 searchDatabase(chemicalSlug);
+                query = chemicalSlug;
             } else {
                 Log.i(TAG, "This was called with an empty search query");
             }
@@ -100,8 +98,9 @@ public class SearchResultActivity extends ABSearchActivity implements
     @Override
     public void displayMaterial(String materialSlug) {
         Intent intent = new Intent();
-        intent.setClass(this, DisplayActivity.class);
-        intent.putExtra(DisplayActivity.MATERIAL_SLUG, materialSlug);
+        intent.setClass(this, ViewChoicesActivity.class);
+        intent.putExtra(ViewChoicesActivity.SEARCH_QUERY, query);
+        intent.putExtra(ViewChoicesActivity.MATERIAL_SLUG, materialSlug);
         startActivity(intent);
     }
 

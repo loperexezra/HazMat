@@ -25,6 +25,7 @@
         <androidsupport.version>r6</androidsupport.version>
         <ormlite.version>4.38</ormlite.version>
         <androidfb.version>1.6</androidfb.version>
+        <hockeyapp.version>2.0.2</hockeyapp.version>
         <maven.android.plugin.version>3.1.1</maven.android.plugin.version>
         <maven.resources.plugin.version>2.5</maven.resources.plugin.version>
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
@@ -36,6 +37,16 @@
         <repository>
             <id>com.jakewharton</id>
             <url>http://r.jakewharton.com/maven/release</url>
+        </repository>
+        <repository>
+            <id>net.hockeyapp.android</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </repository>
     </repositories>
 
@@ -76,6 +87,14 @@
             <version>${ormlite.version}</version>
         </dependency>
 
+        <!-- External Jars -->
+        <dependency>
+            <groupId>net.hockeyapp.android</groupId>
+            <artifactId>HockeySDK</artifactId>
+            <version>${hockeyapp.version}</version>
+            <type>apklib</type>
+        </dependency>
+
         <!-- Action Bar -->
         <dependency>
             <groupId>com.actionbarsherlock</groupId>
@@ -89,6 +108,12 @@
             <version>${roboabs.version}</version>
         </dependency>
 
+        <!-- Internal Jars -->
+        <dependency>
+            <groupId>com.rel.hazmat.json</groupId>
+            <artifactId>hazmat-json</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
