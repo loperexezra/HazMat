@@ -16,6 +16,7 @@ import android.util.Log;
 public class SOGTextView extends TypefacedTextView {
     private static final String TAG = "SOGTextView";
     public static final String ALWAYS = "ALWAYS";
+    public static final String YELLOW = "YELLOW";
     public static final String GO = " GO";
     public static final String NO_GO = " NO GO";
 
@@ -39,6 +40,10 @@ public class SOGTextView extends TypefacedTextView {
                     startPosition, startPosition + 6, 0);
             spannable.setSpan(new RelativeSizeSpan(1.5f), startPosition,
                     startPosition + 6, 0);
+            if (text.contains(YELLOW)){
+                Integer startPositionYellow = text.indexOf(YELLOW, 0);
+                spannable.setSpan(new ForegroundColorSpan(Color.YELLOW), startPositionYellow, startPositionYellow + 6, 0);
+            }
             setText(spannable);
         } else if (text.contains(GO)) {
             Integer startPosition = text.indexOf(GO, 0);

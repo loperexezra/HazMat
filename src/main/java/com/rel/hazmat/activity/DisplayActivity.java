@@ -53,10 +53,6 @@ public class DisplayActivity extends RoboSherlockActivity {
 
     @InjectView(R.id.lvwGeneralInfo)
     protected ListView lvwGeneralInfo;
-//    @InjectView(R.id.lvwProperties)
-//    protected ListView lvwProperties;
-//    @InjectView(R.id.lvwLimits)
-//    protected ListView lvwLimits;
 
     protected String query;
     protected String chemicalSlug;

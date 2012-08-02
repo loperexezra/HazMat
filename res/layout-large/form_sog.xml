@@ -33,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Standard Operating Guidelines"
+                android:textSize="20dip"
                 hazmat:typeface="fonts/Roboto-Medium.ttf" />
 
             <View
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="ALWAYS wear your turnout gear with self-contained breathing apparatus(SCBA)"
                 android:textColor="@color/ics_gray"
-                android:textSize="15dip"
+                android:textSize="20dip"
                 hazmat:typeface="fonts/Roboto-Light.ttf" />
 
             <com.rel.hazmat.widgets.SOGTextView
@@ -64,7 +65,7 @@
                 android:paddingTop="8dip"
                 android:text="If the material&apos;s radiation is less than 2x the background radiation you have a GO"
                 android:textColor="@color/ics_gray"
-                android:textSize="15dip"
+                android:textSize="20dip"
                 hazmat:typeface="fonts/Roboto-Light.ttf" />
 
             <com.rel.hazmat.widgets.SOGTextView
@@ -73,7 +74,7 @@
                 android:paddingTop="8dip"
                 android:text="If the F Paper changes to YELLOW then you have a NO GO"
                 android:textColor="@color/ics_gray"
-                android:textSize="15dip"
+                android:textSize="20dip"
                 hazmat:typeface="fonts/Roboto-Light.ttf" />
 
             <com.rel.hazmat.widgets.SOGTextView
@@ -82,7 +83,7 @@
                 android:paddingTop="8dip"
                 android:text="If the PH Paper&apos;s color changes then you have a GO"
                 android:textColor="@color/ics_gray"
-                android:textSize="15dip"
+                android:textSize="20dip"
                 hazmat:typeface="fonts/Roboto-Light.ttf" />
 
             <com.rel.hazmat.widgets.SOGTextView
@@ -91,7 +92,7 @@
                 android:paddingTop="8dip"
                 android:text="If the Temperature Gun&apos;s reading ↑ then you have a GO"
                 android:textColor="@color/ics_gray"
-                android:textSize="15dip"
+                android:textSize="20dip"
                 hazmat:typeface="fonts/Roboto-Light.ttf" />
 
             <com.rel.hazmat.widgets.SOGTextView

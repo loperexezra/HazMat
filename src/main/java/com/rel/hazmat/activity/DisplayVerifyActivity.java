@@ -36,19 +36,19 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
     public static final String LIMITS = "Limits";
 
     // General Information
-    protected final static String NAME = "Name";
-    protected final static String FORMULA = "Formula";
-    protected final static String STATE = "State";
-    protected final static String DOT = "UN no.";
+    protected final static String NAME = "Actual Name";
+    protected final static String FORMULA = "Chemical Formula";
+    protected final static String DOT = "UN ID Number";
+    protected final static String STATE = "Physical Description";
     // Properties
     protected final static String MOLECULAR_WEIGHT = "Molecular Weight";
     protected final static String SOLUBILITY = "Solubility";
-    protected final static String ION_PRESSURE = "Ionization Pressure";
-    protected final static String GRAVITY = "Specific Gravity";
-    // Limits
     protected final static String FLASH_POINT = "Flash Point";
+    // Limits
     protected final static String UEL = "UEL";
     protected final static String LEL = "LEL";
+    protected final static String ION_PRESSURE = "Ionization Potential";
+    protected final static String GRAVITY = "Specific Gravity";
     protected final static String IDLH = "IDLH";
     protected final static String REL = "REL";
     protected final static String PEL = "PEL";
@@ -122,49 +122,49 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
         generalInfoDTOList.add(new ListViewDTO(NAME, material.getName()));
         generalInfoDTOList.add(new ListViewDTO(FORMULA, material.getFormula()));
-        generalInfoDTOList.add(new ListViewDTO(STATE, material.getStates()));
         generalInfoDTOList.add(new ListViewDTO(DOT, material.getDotNo()));
+        generalInfoDTOList.add(new ListViewDTO(STATE, material.getStates()));
+
         BoxedValueAdapter listAdapter = new BoxedValueAdapter(this,
                 generalInfoDTOList);
         initProperties(listAdapter, material.getMolecularWeight(),
-                material.getSolubility(), material.getIonizationPressure(),
-                material.getGravity());
-        initLimits(listAdapter, material.getFlashPoint(), material.getUel(),
-                material.getLel(), material.getIdlh(), material.getRel(),
+                material.getSolubility(), material.getFlashPoint());
+        initLimits(listAdapter, material.getUel(),
+                material.getLel(), material.getIonizationPressure(),
+                material.getGravity(), material.getIdlh(), material.getRel(),
                 material.getPel());
         lvwGeneralInfo.setAdapter(listAdapter);
     }
 
     protected void initProperties(BoxedValueAdapter listAdapter,
-            String molecularWeight, String solubility, String ionPressure,
-            String gravity) {
+            String molecularWeight, String solubility, String flashPoint) {
         View headerGeneralInfo = (View) getLayoutInflater().inflate(
                 R.layout.item_header, null);
         TextView lblHeader = (TextView) headerGeneralInfo
                 .findViewById(R.id.lblHeader);
         lblHeader.setText(PROPERTIES);
-//        lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> propertiesDTOList = new ArrayList<ListViewDTO>();
         propertiesDTOList
                 .add(new ListViewDTO(MOLECULAR_WEIGHT, molecularWeight));
         propertiesDTOList.add(new ListViewDTO(SOLUBILITY, solubility));
-        propertiesDTOList.add(new ListViewDTO(ION_PRESSURE, ionPressure));
-        propertiesDTOList.add(new ListViewDTO(GRAVITY, gravity));
+        propertiesDTOList.add(new ListViewDTO(FLASH_POINT, flashPoint));
         listAdapter.addAll(propertiesDTOList);
     }
 
-    protected void initLimits(BoxedValueAdapter listAdapter, String flashPoint,
-            String uel, String lel, String idlh, String rel, String pel) {
+    protected void initLimits(BoxedValueAdapter listAdapter, String uel,
+            String lel, String ionPressure, String gravity,  String idlh, String rel, String pel) {
         View headerGeneralInfo = (View) getLayoutInflater().inflate(
                 R.layout.item_header, null);
         TextView lblHeader = (TextView) headerGeneralInfo
                 .findViewById(R.id.lblHeader);
         lblHeader.setText(LIMITS);
-//        lvwGeneralInfo.addHeaderView(headerGeneralInfo);
+        // lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> limitsDTOList = new ArrayList<ListViewDTO>();
-        limitsDTOList.add(new ListViewDTO(FLASH_POINT, flashPoint));
+
         limitsDTOList.add(new ListViewDTO(UEL, uel + "%"));
         limitsDTOList.add(new ListViewDTO(LEL, lel + "%"));
+        limitsDTOList.add(new ListViewDTO(ION_PRESSURE, ionPressure));
+        limitsDTOList.add(new ListViewDTO(GRAVITY, gravity));
         limitsDTOList.add(new ListViewDTO(IDLH, idlh));
         limitsDTOList.add(new ListViewDTO(REL, rel));
         limitsDTOList.add(new ListViewDTO(PEL, pel));

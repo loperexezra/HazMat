@@ -15,6 +15,7 @@ import com.google.inject.Inject;
 import com.rel.hazmat.HazMatBaseActivity;
 import com.rel.hazmat.R;
 import com.rel.hazmat.activity.ICSSearchActivity;
+import com.rel.hazmat.db.DBHelper;
 import com.rel.hazmat.db.service.contracts.IMaterialService;
 import com.rel.hazmat.json.model.request.UpdateChemicalsRequest;
 import com.rel.hazmat.tasks.UpdateChemicalsTask;
@@ -34,6 +35,8 @@ public class ABSearchActivity extends HazMatBaseActivity implements
 
     @Inject
     protected IMaterialService materialService;
+    @Inject
+    protected DBHelper helper;
     protected boolean isIndeterminateProgressVisible;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -97,6 +100,7 @@ public class ABSearchActivity extends HazMatBaseActivity implements
     }
 
     protected void updateChemicalList() {
+        helper.clearDB();
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(true);
         progressDialog.setMessage("Updating..");

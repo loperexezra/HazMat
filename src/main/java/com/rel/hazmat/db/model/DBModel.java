@@ -7,6 +7,8 @@ public abstract class DBModel {
     public static final String ID = "id";
     @DatabaseField(columnName = SLUG, unique = true)
     protected String slug;
+    @DatabaseField(id = true)
+    protected int id;
 
     public DBModel() {
     }
@@ -21,6 +23,14 @@ public abstract class DBModel {
 
     public void setSlug(String slug) {
         this.slug = slug;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

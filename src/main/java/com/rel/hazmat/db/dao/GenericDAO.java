@@ -21,7 +21,6 @@ public abstract class GenericDAO<T extends DBModel> {
     }
 
     public boolean exists(String slug) throws NullSlugException {
-        Log.i("GenericDAO", "Checking if object slug exists : " + slug);
         if (!Strings.isNullOrEmpty(slug)) {
             if (getItemUsingSlug(slug) != null) {
                 return true;
@@ -33,18 +32,24 @@ public abstract class GenericDAO<T extends DBModel> {
     }
 
     public T save(T t) throws NullSlugException {
-        Log.i("GenericDAO", "Recieved object with slug" + t.getSlug()
-                + " number of entries");
         T resultModel = null;
-        try {
-            if (exists(t.getSlug())) {
-                dao.update(t);
-                resultModel = getItemUsingSlug(t.getSlug());
-            } else {
-                resultModel = dao.createIfNotExists(t);
+        if (t != null) {
+            try {
+                T itemCheck = getItemUsingSlug(t.getSlug());
+                if (itemCheck == null) {
+                    dao.create(t);
+                    resultModel = getItemUsingSlug(t.getSlug());
+                } else {
+                    t.setId(itemCheck.getId());
+                    dao.delete(itemCheck);
+                    resultModel = dao.createIfNotExists(t);
+                    Log.i("GenericDAO",
+                            "Item already exists, updating.. slug is : "
+                                    + resultModel.getSlug());
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
         return resultModel;
     }

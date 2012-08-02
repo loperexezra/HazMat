@@ -77,6 +77,7 @@
             android:gravity="center"
             android:onClick="onClickSearch"
             android:text="@string/lbl_search"
+            android:textSize="25dip"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
 
         <com.rel.hazmat.widgets.TypefacedButton
@@ -86,6 +87,7 @@
             android:gravity="center"
             android:onClick="onClickSearchUnknown"
             android:text="@string/lbl_unknown"
+            android:textSize="25dip"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
     </LinearLayout>
 

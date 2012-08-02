@@ -48,7 +48,6 @@ public class HazardousMaterialDAO extends GenericDAO<HazardousMaterial> {
         try {
             queryBuilder = dao.queryBuilder();
             queryBuilder.orderBy(HazardousMaterial.ID, false);
-            queryBuilder.limit(1);
             HazardousMaterial material = dao.queryForFirst(queryBuilder
                     .prepare());
             if (material != null)
@@ -66,10 +65,9 @@ public class HazardousMaterialDAO extends GenericDAO<HazardousMaterial> {
         HazardousMaterial material = null;
         try {
             queryBuilder = dao.queryBuilder();
-            queryBuilder.orderBy(HazardousMaterial.DOT_NO, false);
-            queryBuilder.limit(1);
+            queryBuilder.where().eq(HazardousMaterial.DOT_NO, dotNumber);
             material = dao.queryForFirst(queryBuilder.prepare());
-            Log.i(TAG, "Returning material : " + material);
+            Log.i(TAG, "Returning material using dot number : " + material);
         } catch (SQLException e) {
             e.printStackTrace();
         }

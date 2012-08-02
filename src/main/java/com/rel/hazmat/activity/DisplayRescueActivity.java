@@ -31,15 +31,14 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
     public static final String SEARCH_QUERY = "search_query";
 
     // General Information
-    protected final static String NAME = "Name";
-    protected final static String FORMULA = "Formula";
-    protected final static String STATE = "State";
-    protected final static String DOT = "UN no.";
-    protected final static String INITIAL_ISOLATION_ZONE = "Isolation Zonw";
+    protected final static String NAME = "Chemical Name";
+    protected final static String HAZARDS = "Chemical Hazards";
+    protected final static String STATE = "State of Matter";
+    protected final static String INITIAL_ISOLATION_ZONE = "Initial Isolation Zone";
     protected final static String HAZMAT_IQ_SOG = "HazMatIQ SOG";
-    protected final static String PROTECTIVE_EQUIPMENT = "Protective Equipment";
+    protected final static String PROTECTIVE_EQUIPMENT = "Line of Sight Rescue Personal Protective Equipment";
     protected final static String METER_COCKPIT = "Meter Cockpit";
-    protected final static String TECHNICAL_DECON = "Technical Decon";
+    protected final static String TECHNICAL_DECON = "Decon";
 
     @Inject
     protected HazardousMaterialDAO materialDAO;
@@ -105,8 +104,9 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
     protected void initGeneralInfo(String name, String formula, String state,
             String DOTnum) {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
+        
         generalInfoDTOList.add(new ListViewDTO(NAME, name));
-        generalInfoDTOList.add(new ListViewDTO(FORMULA, formula));
+        generalInfoDTOList.add(new ListViewDTO(HAZARDS, ""));
         generalInfoDTOList.add(new ListViewDTO(STATE, state));
         generalInfoDTOList.add(new ListViewDTO(INITIAL_ISOLATION_ZONE, ""));
         generalInfoDTOList.add(new ListViewDTO(HAZMAT_IQ_SOG, ""));

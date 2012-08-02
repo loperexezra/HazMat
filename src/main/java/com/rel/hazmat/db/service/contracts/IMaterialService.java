@@ -9,7 +9,7 @@ import com.rel.hazmat.json.model.serializable.ChemicalResponseSerializable;
 /**
  * 
  * @author Lope Chupijay Emano
- *
+ * 
  */
 public interface IMaterialService {
     public List<SearchDTO> searchMaterial(String query);

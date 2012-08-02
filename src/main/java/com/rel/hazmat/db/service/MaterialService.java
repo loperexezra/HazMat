@@ -60,4 +60,5 @@ public class MaterialService implements IMaterialService {
     public Integer getLastID() {
         return materialDAO.getLastID();
     }
+
 }

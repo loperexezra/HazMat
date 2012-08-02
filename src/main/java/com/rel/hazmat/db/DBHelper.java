@@ -10,7 +10,6 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.rel.hazmat.db.model.HazardousMaterial;
-import com.rel.hazmat.db.model.Material;
 
 /**
  * 
@@ -21,7 +20,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "hazmat.db";
     private static final int DATABASE_VERSION = 1;
 
-    private Dao<Material, Integer> materialTable = null;
     private Dao<HazardousMaterial, Integer> hazardousMaterialTable = null;
 
     public DBHelper(Context context) {
@@ -31,7 +29,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
         try {
-            TableUtils.createTable(connectionSource, Material.class);
             TableUtils.createTable(connectionSource, HazardousMaterial.class);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -44,7 +41,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource,
             int oldVersion, int newVersion) {
         try {
-            TableUtils.dropTable(connectionSource, Material.class, true);
             TableUtils.dropTable(connectionSource, HazardousMaterial.class,
                     true);
             onCreate(db, connectionSource);
@@ -54,17 +50,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
         } catch (java.sql.SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public Dao<Material, Integer> getMaterialDao() throws SQLException {
-        if (materialTable == null) {
-            try {
-                materialTable = getDao(Material.class);
-            } catch (java.sql.SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return materialTable;
     }
 
     public Dao<HazardousMaterial, Integer> getHazardousMaterialTable() {
@@ -78,16 +63,9 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
         return hazardousMaterialTable;
     }
 
-    public void createFakeData() {
-        Material product = new Material("Carbon");
-        Material product2 = new Material("Carbonyl");
-        Material product3 = new Material("Carbonate");
+    public void clearDB() {
         try {
-            getMaterialDao().create(product);
-            getMaterialDao().create(product2);
-            getMaterialDao().create(product3);
-        } catch (SQLException e) {
-            e.printStackTrace();
+            TableUtils.clearTable(getConnectionSource(), HazardousMaterial.class);
         } catch (java.sql.SQLException e) {
             e.printStackTrace();
         }

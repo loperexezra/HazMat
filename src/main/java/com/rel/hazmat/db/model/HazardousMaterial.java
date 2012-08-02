@@ -27,8 +27,6 @@ public class HazardousMaterial extends DBModel {
     public final static String IDLH = "IDLH";
     public final static String REL = "REL";
     public final static String PEL = "PEL";
-    @DatabaseField(generatedId = true, columnName = ID)
-    private int id;
     @DatabaseField(columnName = NAME)
     private String name;
     @DatabaseField(columnName = FORMULA)
@@ -111,14 +109,6 @@ public class HazardousMaterial extends DBModel {
         this.idlh = idlh;
         this.rel = rel;
         this.pel = pel;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
