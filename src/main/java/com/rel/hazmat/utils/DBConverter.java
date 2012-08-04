@@ -18,7 +18,16 @@ public class DBConverter {
                 response.getSolubility(), response.getIonizationPressure(),
                 response.getSpecificGravity(), response.getFlashPoint(),
                 response.getPctUel(), response.getPctLel(), response.getIdlh(),
-                response.getRel(), response.getPel());
+                response.getRel(), response.getPel(),
+                response.getRescChemicalHazards(),
+                response.getRescStateOfMatter(), response.getRescIniIsoZone(),
+                response.getRescHazmatIqSog(), response.getRescLosRescPpe(),
+                response.getRescMeterCockpit(), response.getRescDecon(),
+                response.getPlumChemicalHazards(),
+                response.getPlumStateofMatter(), response.getPlumIniIsoZone(),
+                response.getPlumHazmatIqSog(), response.getPlumPlumPpe(),
+                response.getPlumMeterCockpit(),
+                response.getPlumTechnicalDecon());
     }
 
 }

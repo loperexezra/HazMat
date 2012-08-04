@@ -19,6 +19,7 @@ import com.rel.hazmat.adapter.BoxedValueAdapter;
 import com.rel.hazmat.db.dao.HazardousMaterialDAO;
 import com.rel.hazmat.db.model.HazardousMaterial;
 import com.rel.hazmat.dto.ListViewDTO;
+import com.rel.hazmat.utils.DTOConverter;
 
 /**
  * 
@@ -94,25 +95,39 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
 
     public void displayMaterial(String chemicalSlug) {
         HazardousMaterial material = materialDAO.getItemUsingSlug(chemicalSlug);
-        Log.i(TAG, "Received material from DB : " + material.getName());
         if (material != null) {
-            initGeneralInfo(material.getName(), material.getFormula(),
-                    material.getStates(), material.getDotNo());
+            Log.i(TAG, "Received material from DB : " + material.getName());
+            initGeneralInfo(material.getName(),
+                    material.getPlumChemicalHazards(),
+                    material.getPlumStateofMatter(),
+                    material.getPlumIniIsoZone(),
+                    material.getPlumHazmatIqSog(), material.getPlumPlumPpe(),
+                    material.getPlumMeterCockpit(),
+                    material.getPlumTechnicalDecon());
         }
     }
 
-    protected void initGeneralInfo(String name, String formula, String state,
-            String DOTnum) {
+    protected void initGeneralInfo(String name, String hazards, String state,
+            String initialIsolationZone, String hazmatIQSog,
+            String protectiveEquipment, String meterCockpit,
+            String technicalDecon) {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
-        
-        generalInfoDTOList.add(new ListViewDTO(NAME, name));
-        generalInfoDTOList.add(new ListViewDTO(HAZARDS, ""));
-        generalInfoDTOList.add(new ListViewDTO(STATE, state));
-        generalInfoDTOList.add(new ListViewDTO(INITIAL_ISOLATION_ZONE, ""));
-        generalInfoDTOList.add(new ListViewDTO(HAZMAT_IQ_SOG, ""));
-        generalInfoDTOList.add(new ListViewDTO(PROTECTIVE_EQUIPMENT, ""));
-        generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, ""));
-        generalInfoDTOList.add(new ListViewDTO(TECHNICAL_DECON, ""));
+        generalInfoDTOList
+                .add(new ListViewDTO(NAME, DTOConverter.format(name)));
+        generalInfoDTOList.add(new ListViewDTO(HAZARDS, DTOConverter
+                .format(hazards)));
+        generalInfoDTOList.add(new ListViewDTO(STATE, DTOConverter
+                .format(state)));
+        generalInfoDTOList.add(new ListViewDTO(INITIAL_ISOLATION_ZONE,
+                DTOConverter.format(initialIsolationZone)));
+        generalInfoDTOList.add(new ListViewDTO(HAZMAT_IQ_SOG, DTOConverter
+                .format(hazmatIQSog)));
+        generalInfoDTOList.add(new ListViewDTO(PROTECTIVE_EQUIPMENT,
+                DTOConverter.format(protectiveEquipment)));
+        generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, DTOConverter
+                .format(meterCockpit)));
+        generalInfoDTOList.add(new ListViewDTO(TECHNICAL_DECON, DTOConverter
+                .format(technicalDecon)));
         ListAdapter listAdapter = new BoxedValueAdapter(this,
                 generalInfoDTOList);
         lvwGeneralInfo.setAdapter(listAdapter);

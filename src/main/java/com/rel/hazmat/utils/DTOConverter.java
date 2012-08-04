@@ -3,6 +3,7 @@ package com.rel.hazmat.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.base.Strings;
 import com.rel.hazmat.db.model.HazardousMaterial;
 import com.rel.hazmat.dto.SearchDTO;
 
@@ -24,5 +25,13 @@ public class DTOConverter {
             searchList.add(toSearchDTO(material));
         }
         return searchList;
+    }
+    
+    public static String format(String value){
+        if (Strings.isNullOrEmpty(value)){
+            return "TBA";
+        } else {
+            return value;
+        }
     }
 }

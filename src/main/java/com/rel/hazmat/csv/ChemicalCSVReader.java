@@ -48,14 +48,14 @@ public class ChemicalCSVReader {
                 String PEL = products.get("PEL");
                 Log.i(TAG, " name " + name + " formula " + formula + " states "
                         + states);
-                try {
-                    materialDAO.save(new HazardousMaterial(name, name, formula,
-                            states, dot_no, molecular_weight, solubility,
-                            flash_point, ionization, gravity, UEL, LEL, IDLH,
-                            REL, PEL));
-                } catch (NullSlugException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    materialDAO.save(new HazardousMaterial(name, name, formula,
+//                            states, dot_no, molecular_weight, solubility,
+//                            flash_point, ionization, gravity, UEL, LEL, IDLH,
+//                            REL, PEL));
+//                } catch (NullSlugException e) {
+//                    e.printStackTrace();
+//                }
             }
             products.close();
         } catch (IOException e) {

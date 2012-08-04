@@ -27,6 +27,23 @@ public class HazardousMaterial extends DBModel {
     public final static String IDLH = "IDLH";
     public final static String REL = "REL";
     public final static String PEL = "PEL";
+    // rescue
+    public final static String RES_CHEMICAL_HAZARDS = "resc_chemical_hazards";
+    public final static String RES_STATE_OF_MATTER = "resc_state_of_matter";
+    public final static String RES_INI_ISO_ZONE = "resc_ini_iso_zone";
+    public final static String RES_HAZMAT_SOG = "resc_hazmatiq_sog";
+    public final static String RES_LOS_RES_PIPE = "resc_los_resc_ppe";
+    public final static String RES_METER_COCKPIT = "resc_meter_cockpit";
+    public final static String RES_DECON = "resc_decon";
+    // plum
+    public final static String PLUM_CHEM_HAZARDS = "plum_chemical_hazards";
+    public final static String PLUM_STATE_OF_MATTER = "plum_state_of_matter";
+    public final static String PLUM_INI_ISO_ZONE = "plum_ini_iso_zone";
+    public final static String PLUM_HAZMATIQ_SOG = "plum_hazmatiq_sog";
+    public final static String PLUM_PLUM_PIPE = "plum_plum_ppe";
+    public final static String PLUM_METER_COCKPIT = "plum_meter_cockpit";
+    public final static String PLUM_TECHNICAL_DECON = "plum_technical_decon";
+
     @DatabaseField(columnName = NAME)
     private String name;
     @DatabaseField(columnName = FORMULA)
@@ -55,6 +72,36 @@ public class HazardousMaterial extends DBModel {
     private String rel;
     @DatabaseField(columnName = PEL)
     private String pel;
+    // rescue
+    @DatabaseField(columnName = RES_CHEMICAL_HAZARDS)
+    private String rescChemicalHazards;
+    @DatabaseField(columnName = RES_STATE_OF_MATTER)
+    private String rescStateOfMatter;
+    @DatabaseField(columnName = RES_INI_ISO_ZONE)
+    private String rescIniIsoZone;
+    @DatabaseField(columnName = RES_HAZMAT_SOG)
+    private String rescHazmatIqSog;
+    @DatabaseField(columnName = RES_LOS_RES_PIPE)
+    private String rescLosRescPpe;
+    @DatabaseField(columnName = RES_METER_COCKPIT)
+    private String rescMeterCockpit;
+    @DatabaseField(columnName = RES_DECON)
+    private String rescDecon;
+    // plumbing
+    @DatabaseField(columnName = PLUM_CHEM_HAZARDS)
+    private String plumChemicalHazards;
+    @DatabaseField(columnName = PLUM_STATE_OF_MATTER)
+    private String plumStateofMatter;
+    @DatabaseField(columnName = PLUM_INI_ISO_ZONE)
+    private String plumIniIsoZone;
+    @DatabaseField(columnName = PLUM_HAZMATIQ_SOG)
+    private String plumHazmatIqSog;
+    @DatabaseField(columnName = PLUM_PLUM_PIPE)
+    private String plumPlumPpe;
+    @DatabaseField(columnName = PLUM_METER_COCKPIT)
+    private String plumMeterCockpit;
+    @DatabaseField(columnName = PLUM_TECHNICAL_DECON)
+    private String plumTechnicalDecon;
 
     public HazardousMaterial() {
         super();
@@ -66,33 +113,11 @@ public class HazardousMaterial extends DBModel {
         this.formula = formula;
     }
 
-    public HazardousMaterial(String slug, String name, String formula,
-            String states, String dotNo, String molecularWeight,
-            String solubility, String ionizationPressure, String gravity,
-            String flashPoint, String uel, String lel, String idlh, String rel,
-            String pel) {
-        super(slug);
-        this.name = name;
-        this.formula = formula;
-        this.states = states;
-        this.dotNo = dotNo;
-        this.molecularWeight = molecularWeight;
-        this.solubility = solubility;
-        this.ionizationPressure = ionizationPressure;
-        this.gravity = gravity;
-        this.flashPoint = flashPoint;
-        this.uel = uel;
-        this.lel = lel;
-        this.idlh = idlh;
-        this.rel = rel;
-        this.pel = pel;
-    }
-    
-    public HazardousMaterial(Integer id, String slug, String name, String formula,
-            String states, String dotNo, String molecularWeight,
-            String solubility, String ionizationPressure, String gravity,
-            String flashPoint, String uel, String lel, String idlh, String rel,
-            String pel) {
+    public HazardousMaterial(Integer id, String slug, String name,
+            String formula, String states, String dotNo,
+            String molecularWeight, String solubility,
+            String ionizationPressure, String gravity, String flashPoint,
+            String uel, String lel, String idlh, String rel, String pel) {
         super(slug);
         this.id = id;
         this.name = name;
@@ -109,6 +134,49 @@ public class HazardousMaterial extends DBModel {
         this.idlh = idlh;
         this.rel = rel;
         this.pel = pel;
+    }
+
+    public HazardousMaterial(Integer id, String slug, String name,
+            String formula, String states, String dotNo,
+            String molecularWeight, String solubility,
+            String ionizationPressure, String gravity, String flashPoint,
+            String uel, String lel, String idlh, String rel, String pel,
+            String rescChemicalHazards, String rescStateOfMatter,
+            String rescIniIsoZone, String rescHazmatIqSog,
+            String rescLosRescPpe, String rescMeterCockpit, String rescDecon,
+            String plumChemicalHazards, String plumStateofMatter,
+            String plumIniIsoZone, String plumHazmatIqSog, String plumPlumPpe,
+            String plumMeterCockpit, String plumTechnicalDecon) {
+        super(slug);
+        this.id = id;
+        this.name = name;
+        this.formula = formula;
+        this.states = states;
+        this.dotNo = dotNo;
+        this.molecularWeight = molecularWeight;
+        this.solubility = solubility;
+        this.ionizationPressure = ionizationPressure;
+        this.gravity = gravity;
+        this.flashPoint = flashPoint;
+        this.uel = uel;
+        this.lel = lel;
+        this.idlh = idlh;
+        this.rel = rel;
+        this.pel = pel;
+        this.rescChemicalHazards = rescChemicalHazards;
+        this.rescStateOfMatter = rescStateOfMatter;
+        this.rescIniIsoZone = rescIniIsoZone;
+        this.rescHazmatIqSog = rescHazmatIqSog;
+        this.rescLosRescPpe = rescLosRescPpe;
+        this.rescMeterCockpit = rescMeterCockpit;
+        this.rescDecon = rescDecon;
+        this.plumChemicalHazards = plumChemicalHazards;
+        this.plumStateofMatter = plumStateofMatter;
+        this.plumIniIsoZone = plumIniIsoZone;
+        this.plumHazmatIqSog = plumHazmatIqSog;
+        this.plumPlumPpe = plumPlumPpe;
+        this.plumMeterCockpit = plumMeterCockpit;
+        this.plumTechnicalDecon = plumTechnicalDecon;
     }
 
     public String getName() {
@@ -221,6 +289,118 @@ public class HazardousMaterial extends DBModel {
 
     public void setPel(String pel) {
         this.pel = pel;
+    }
+
+    public String getRescChemicalHazards() {
+        return rescChemicalHazards;
+    }
+
+    public void setRescChemicalHazards(String rescChemicalHazards) {
+        this.rescChemicalHazards = rescChemicalHazards;
+    }
+
+    public String getRescStateOfMatter() {
+        return rescStateOfMatter;
+    }
+
+    public void setRescStateOfMatter(String rescStateOfMatter) {
+        this.rescStateOfMatter = rescStateOfMatter;
+    }
+
+    public String getRescIniIsoZone() {
+        return rescIniIsoZone;
+    }
+
+    public void setRescIniIsoZone(String rescIniIsoZone) {
+        this.rescIniIsoZone = rescIniIsoZone;
+    }
+
+    public String getRescHazmatIqSog() {
+        return rescHazmatIqSog;
+    }
+
+    public void setRescHazmatIqSog(String rescHazmatIqSog) {
+        this.rescHazmatIqSog = rescHazmatIqSog;
+    }
+
+    public String getRescLosRescPpe() {
+        return rescLosRescPpe;
+    }
+
+    public void setRescLosRescPpe(String rescLosRescPpe) {
+        this.rescLosRescPpe = rescLosRescPpe;
+    }
+
+    public String getRescMeterCockpit() {
+        return rescMeterCockpit;
+    }
+
+    public void setRescMeterCockpit(String rescMeterCockpit) {
+        this.rescMeterCockpit = rescMeterCockpit;
+    }
+
+    public String getRescDecon() {
+        return rescDecon;
+    }
+
+    public void setRescDecon(String rescDecon) {
+        this.rescDecon = rescDecon;
+    }
+
+    public String getPlumChemicalHazards() {
+        return plumChemicalHazards;
+    }
+
+    public void setPlumChemicalHazards(String plumChemicalHazards) {
+        this.plumChemicalHazards = plumChemicalHazards;
+    }
+
+    public String getPlumStateofMatter() {
+        return plumStateofMatter;
+    }
+
+    public void setPlumStateofMatter(String plumStateofMatter) {
+        this.plumStateofMatter = plumStateofMatter;
+    }
+
+    public String getPlumIniIsoZone() {
+        return plumIniIsoZone;
+    }
+
+    public void setPlumIniIsoZone(String plumIniIsoZone) {
+        this.plumIniIsoZone = plumIniIsoZone;
+    }
+
+    public String getPlumHazmatIqSog() {
+        return plumHazmatIqSog;
+    }
+
+    public void setPlumHazmatIqSog(String plumHazmatIqSog) {
+        this.plumHazmatIqSog = plumHazmatIqSog;
+    }
+
+    public String getPlumPlumPpe() {
+        return plumPlumPpe;
+    }
+
+    public void setPlumPlumPpe(String plumPlumPpe) {
+        this.plumPlumPpe = plumPlumPpe;
+    }
+
+    public String getPlumMeterCockpit() {
+        return plumMeterCockpit;
+    }
+
+    public void setPlumMeterCockpit(String plumMeterCockpit) {
+        this.plumMeterCockpit = plumMeterCockpit;
+    }
+
+    public String getPlumTechnicalDecon() {
+        return plumTechnicalDecon;
+    }
+
+    public void setPlumTechnicalDecon(String plumTechnicalDecon) {
+        this.plumTechnicalDecon = plumTechnicalDecon;
     }
 
 }
