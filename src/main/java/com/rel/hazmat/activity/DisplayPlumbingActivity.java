@@ -54,7 +54,7 @@ public class DisplayPlumbingActivity extends RoboSherlockActivity {
     public void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_PROGRESS);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_display_hazardous_material);
+        setContentView(R.layout.form_display_plumbing);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
@@ -98,18 +98,17 @@ public class DisplayPlumbingActivity extends RoboSherlockActivity {
         Log.i(TAG, "Received material from DB : " + material.getName());
         if (material != null) {
             initGeneralInfo(material.getName(),
+                    material.getPlumChemicalHazards(),
                     material.getPlumStateofMatter(),
                     material.getPlumIniIsoZone(),
-                    material.getPlumHazmatIqSog(),
                     material.getPlumHazmatIqSog(), material.getPlumPlumPpe(),
-                    material.getPlumMeterCockpit(),
                     material.getPlumMeterCockpit(),
                     material.getPlumTechnicalDecon());
         }
     }
 
-    protected void initGeneralInfo(String name, String formula, String hazards,
-            String state, String initialIsolationZone, String hazmatIQSOG,
+    protected void initGeneralInfo(String name, String hazards, String state,
+            String initialIsolationZone, String hazmatIQSOG,
             String protectiveEquipment, String meterCockpit,
             String technicalDecon) {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();

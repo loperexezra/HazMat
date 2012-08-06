@@ -42,5 +42,10 @@
     <color name="ics_edittext_drawable">@color/ics_blue_light</color>
     <color name="ics_headers">@color/ics_blue_light</color>
     <color name="application_background">@color/black</color>
+    <!-- specs -->
+    <color name="spec_green">#17901C</color>
+    <color name="spec_yellow">#FFC90D</color>
+    <color name="spec_blue">#3F47CC</color>
+    <color name="spec_red">#ED1B24</color>
 
 </resources>
