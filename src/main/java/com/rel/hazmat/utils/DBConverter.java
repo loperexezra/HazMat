@@ -27,7 +27,7 @@ public class DBConverter {
                 response.getPlumStateofMatter(), response.getPlumIniIsoZone(),
                 response.getPlumHazmatIqSog(), response.getPlumPlumPpe(),
                 response.getPlumMeterCockpit(),
-                response.getPlumTechnicalDecon());
+                response.getPlumTechnicalDecon(), response.getUnID());
     }
 
 }

@@ -44,6 +44,8 @@ public class HazardousMaterial extends DBModel {
     public final static String PLUM_METER_COCKPIT = "plum_meter_cockpit";
     public final static String PLUM_TECHNICAL_DECON = "plum_technical_decon";
 
+    public final static String UN_ID = "un_id";
+
     @DatabaseField(columnName = NAME)
     private String name;
     @DatabaseField(columnName = FORMULA)
@@ -102,6 +104,8 @@ public class HazardousMaterial extends DBModel {
     private String plumMeterCockpit;
     @DatabaseField(columnName = PLUM_TECHNICAL_DECON)
     private String plumTechnicalDecon;
+    @DatabaseField(columnName = UN_ID)
+    private String unID;
 
     public HazardousMaterial() {
         super();
@@ -146,7 +150,7 @@ public class HazardousMaterial extends DBModel {
             String rescLosRescPpe, String rescMeterCockpit, String rescDecon,
             String plumChemicalHazards, String plumStateofMatter,
             String plumIniIsoZone, String plumHazmatIqSog, String plumPlumPpe,
-            String plumMeterCockpit, String plumTechnicalDecon) {
+            String plumMeterCockpit, String plumTechnicalDecon, String unID) {
         super(slug);
         this.id = id;
         this.name = name;
@@ -177,6 +181,7 @@ public class HazardousMaterial extends DBModel {
         this.plumPlumPpe = plumPlumPpe;
         this.plumMeterCockpit = plumMeterCockpit;
         this.plumTechnicalDecon = plumTechnicalDecon;
+        this.unID = unID;
     }
 
     public String getName() {
@@ -401,6 +406,14 @@ public class HazardousMaterial extends DBModel {
 
     public void setPlumTechnicalDecon(String plumTechnicalDecon) {
         this.plumTechnicalDecon = plumTechnicalDecon;
+    }
+
+    public String getUnID() {
+        return unID;
+    }
+
+    public void setUnID(String unID) {
+        this.unID = unID;
     }
 
 }

@@ -46,7 +46,7 @@ public class ICSSearchActivity extends ABSearchActivity {
         requestWindowFeature(Window.FEATURE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ics_search);
-//        loadCSV();
+        // loadCSV();
         checkForUpdates();
         if (Build.VERSION.SDK_INT >= 11) {
             edtSearchName.setTextColor(0xffffffff);
@@ -72,24 +72,26 @@ public class ICSSearchActivity extends ABSearchActivity {
     }
 
     public void decideQueryOrUN() {
-        if (isUNFilled())
+        if (isUNFilled()) {
             searchUNID(Integer.parseInt(edtSearchUNID.getText().toString()));
-        else
+        } else
             launchQuery(edtSearchName.getText().toString());
     }
 
     public void launchQuery(String query) {
-        Intent intent = new Intent();
-        intent.setClass(this, SearchResultActivity.class);
-        Log.i(TAG, "Sending query string : "
-                + edtSearchName.getText().toString());
-        intent.putExtra(SearchResultActivity.SEARCH_QUERY, edtSearchName
-                .getText().toString());
-        startActivity(intent);
+        if (query != null) {
+            Intent intent = new Intent();
+            intent.setClass(this, SearchResultActivity.class);
+            Log.i(TAG, "Sending query string : "
+                    + edtSearchName.getText().toString());
+            String trimmedQuery = query.trim();
+            intent.putExtra(SearchResultActivity.SEARCH_QUERY, trimmedQuery);
+            startActivity(intent);
+        }
     }
 
     public void searchUNID(Integer UNID) {
-        HazardousMaterial material = materialDAO.getMaterialUsingDOT(UNID);
+        HazardousMaterial material = materialDAO.getMaterialUsingUNID(UNID);
         if (material != null) {
             Intent intent = new Intent();
             intent.setClass(this, ViewChoicesActivity.class);

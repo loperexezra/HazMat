@@ -73,4 +73,19 @@ public class HazardousMaterialDAO extends GenericDAO<HazardousMaterial> {
         }
         return material;
     }
+
+    public HazardousMaterial getMaterialUsingUNID(Integer unID) {
+        QueryBuilder<HazardousMaterial, Integer> queryBuilder = dao
+                .queryBuilder();
+        HazardousMaterial material = null;
+        try {
+            queryBuilder = dao.queryBuilder();
+            queryBuilder.where().eq(HazardousMaterial.UN_ID, unID);
+            material = dao.queryForFirst(queryBuilder.prepare());
+            Log.i(TAG, "Returning material using dot number : " + material);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return material;
+    }
 }

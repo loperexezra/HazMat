@@ -39,7 +39,7 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
     // General Information
     protected final static String NAME = "Actual Name";
     protected final static String FORMULA = "Chemical Formula";
-    protected final static String DOT = "UN ID Number";
+    protected final static String DOT = "DOT Number";
     protected final static String STATE = "Physical Description";
     // Properties
     protected final static String MOLECULAR_WEIGHT = "Molecular Weight";
@@ -48,7 +48,7 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
     // Limits
     protected final static String UEL = "UEL";
     protected final static String LEL = "LEL";
-    protected final static String ION_PRESSURE = "Ionization Potential";
+    protected final static String ION_POTENTIAL = "Ionization Potential";
     protected final static String GRAVITY = "Specific Gravity";
     protected final static String IDLH = "IDLH";
     protected final static String REL = "REL";
@@ -119,21 +119,24 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
         TextView lblHeader = (TextView) headerGeneralInfo
                 .findViewById(R.id.lblHeader);
         lblHeader.setText(GENERAL_INFO);
-//        lvwGeneralInfo.addHeaderView(headerGeneralInfo);
+        // lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
-        generalInfoDTOList.add(new ListViewDTO(NAME, DTOConverter.format(material.getName())));
-        generalInfoDTOList.add(new ListViewDTO(FORMULA, DTOConverter.format(material.getFormula())));
-        generalInfoDTOList.add(new ListViewDTO(DOT,DTOConverter.format(material.getDotNo())));
-        generalInfoDTOList.add(new ListViewDTO(STATE, DTOConverter.format(material.getStates())));
+        generalInfoDTOList.add(new ListViewDTO(NAME, DTOConverter
+                .format(material.getName())));
+        generalInfoDTOList.add(new ListViewDTO(FORMULA, DTOConverter
+                .format(material.getFormula())));
+        generalInfoDTOList.add(new ListViewDTO(DOT, DTOConverter
+                .format(material.getDotNo())));
+        generalInfoDTOList.add(new ListViewDTO(STATE, DTOConverter
+                .format(material.getStates())));
 
         BoxedValueAdapter listAdapter = new BoxedValueAdapter(this,
                 generalInfoDTOList);
         initProperties(listAdapter, material.getMolecularWeight(),
                 material.getSolubility(), material.getFlashPoint());
-        initLimits(listAdapter, material.getUel(),
-                material.getLel(), material.getIonizationPressure(),
-                material.getGravity(), material.getIdlh(), material.getRel(),
-                material.getPel());
+        initLimits(listAdapter, material.getUel(), material.getLel(),
+                material.getIonizationPressure(), material.getGravity(),
+                material.getIdlh(), material.getRel(), material.getPel());
         lvwGeneralInfo.setAdapter(listAdapter);
     }
 
@@ -145,15 +148,18 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
                 .findViewById(R.id.lblHeader);
         lblHeader.setText(PROPERTIES);
         List<ListViewDTO> propertiesDTOList = new ArrayList<ListViewDTO>();
-        propertiesDTOList
-                .add(new ListViewDTO(MOLECULAR_WEIGHT, DTOConverter.format(molecularWeight)));
-        propertiesDTOList.add(new ListViewDTO(SOLUBILITY, DTOConverter.format(solubility)));
-        propertiesDTOList.add(new ListViewDTO(FLASH_POINT, DTOConverter.format(flashPoint)));
+        propertiesDTOList.add(new ListViewDTO(MOLECULAR_WEIGHT, DTOConverter
+                .format(molecularWeight)));
+        propertiesDTOList.add(new ListViewDTO(SOLUBILITY, DTOConverter
+                .format(solubility)));
+        propertiesDTOList.add(new ListViewDTO(FLASH_POINT, DTOConverter
+                .format(flashPoint)));
         listAdapter.addAll(propertiesDTOList);
     }
 
     protected void initLimits(BoxedValueAdapter listAdapter, String uel,
-            String lel, String ionPressure, String gravity,  String idlh, String rel, String pel) {
+            String lel, String ionPressure, String gravity, String idlh,
+            String rel, String pel) {
         View headerGeneralInfo = (View) getLayoutInflater().inflate(
                 R.layout.item_header, null);
         TextView lblHeader = (TextView) headerGeneralInfo
@@ -164,8 +170,10 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
 
         limitsDTOList.add(new ListViewDTO(UEL, DTOConverter.format(uel + "%")));
         limitsDTOList.add(new ListViewDTO(LEL, DTOConverter.format(lel + "%")));
-        limitsDTOList.add(new ListViewDTO(ION_PRESSURE, DTOConverter.format(ionPressure)));
-        limitsDTOList.add(new ListViewDTO(GRAVITY, DTOConverter.format(gravity)));
+        limitsDTOList.add(new ListViewDTO(ION_POTENTIAL, DTOConverter
+                .format(ionPressure)));
+        limitsDTOList
+                .add(new ListViewDTO(GRAVITY, DTOConverter.format(gravity)));
         limitsDTOList.add(new ListViewDTO(IDLH, DTOConverter.format(idlh)));
         limitsDTOList.add(new ListViewDTO(REL, DTOConverter.format(rel)));
         limitsDTOList.add(new ListViewDTO(PEL, DTOConverter.format(pel)));
