@@ -44,6 +44,8 @@ public class UpdateChemicalsTask extends
     protected Void doInBackground(UpdateChemicalsRequest... req) {
         RequestHandler handler = new RequestHandler(new HttpHandler(
                 "http://www.hazmatiq.net/json/json.php"));
+        // RequestHandler handler = new RequestHandler(new HttpHandler(
+        // "http://192.168.1.139/hazmat/application/json/json"));
         ChemicalResponseSerializable[] response = null;
         try {
             publishProgress(30);

@@ -3,6 +3,7 @@ package com.rel.hazmat.activity;
 import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import com.google.inject.Inject;
 import com.rel.hazmat.R;
 import com.rel.hazmat.db.dao.HazardousMaterialDAO;
 import com.rel.hazmat.db.model.HazardousMaterial;
+import com.rel.hazmat.dto.ListViewDTO;
+import com.rel.hazmat.utils.HazMatUtils;
 
 /**
  * 
@@ -66,7 +69,8 @@ public class ViewChoicesActivity extends RoboSherlockActivity {
 
     public void setLabels(String chemicalName, String formula) {
         lblChemicalName.setText(chemicalName);
-        lblFormula.setText(formula);
+        lblFormula.setText(Html.fromHtml(HazMatUtils.formatFormula(formula)),
+                TextView.BufferType.SPANNABLE);
     }
 
     @Override

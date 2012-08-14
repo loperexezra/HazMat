@@ -3,13 +3,16 @@ package com.rel.hazmat.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.rel.hazmat.R;
 import com.rel.hazmat.dto.SearchDTO;
+import com.rel.hazmat.utils.HazMatUtils;
 import com.rel.hazmat.widgets.TypefacedTextView;
 
 /**
@@ -56,7 +59,7 @@ public class ChemicalSearchResultAdapter extends BaseAdapter {
         TypefacedTextView lblFormula = (TypefacedTextView) row
                 .findViewById(R.id.lblFormula);
         lblChemicalName.setText(searchDTO.getChemicalName());
-        lblFormula.setText(searchDTO.getFormula());
+        lblFormula.setText(Html.fromHtml(HazMatUtils.formatFormula(searchDTO.getFormula())), TextView.BufferType.SPANNABLE);
         return row;
     }
 

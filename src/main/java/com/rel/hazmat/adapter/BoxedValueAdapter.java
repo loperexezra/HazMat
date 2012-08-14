@@ -3,13 +3,16 @@ package com.rel.hazmat.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.rel.hazmat.R;
 import com.rel.hazmat.dto.ListViewDTO;
+import com.rel.hazmat.utils.HazMatUtils;
 import com.rel.hazmat.widgets.TypefacedTextView;
 
 /**
@@ -42,8 +45,8 @@ public class BoxedValueAdapter extends BaseAdapter {
         // TODO Auto-generated method stub
         return 0;
     }
-    
-    public void addAll(List<ListViewDTO> activityDTOList){
+
+    public void addAll(List<ListViewDTO> activityDTOList) {
         this.activityDTOList.addAll(activityDTOList);
     }
 
@@ -60,8 +63,14 @@ public class BoxedValueAdapter extends BaseAdapter {
                 .findViewById(R.id.lblActivityName);
         TypefacedTextView lblActivityValue = (TypefacedTextView) row
                 .findViewById(R.id.lblActivityValue);
+
         lblActivityName.setText(activityDTO.getValueName());
         lblActivityValue.setText(activityDTO.getValue());
+        if (activityDTO.getValueName().contains("Formula")) {
+            lblActivityValue.setText(Html.fromHtml(HazMatUtils
+                    .formatFormula(activityDTO.getValue())),
+                    TextView.BufferType.SPANNABLE);
+        }
         return row;
     }
 }

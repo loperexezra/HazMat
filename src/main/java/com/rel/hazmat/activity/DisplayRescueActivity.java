@@ -33,13 +33,13 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
 
     // General Information
     protected final static String NAME = "Chemical Name";
+    protected final static String HAZMAT_IQ_SOG = "HazMatIQ SOG";
     protected final static String HAZARDS = "Chemical Hazards";
     protected final static String STATE = "State of Matter";
-    protected final static String INITIAL_ISOLATION_ZONE = "Initial Isolation Zone";
-    protected final static String HAZMAT_IQ_SOG = "HazMatIQ SOG";
-    protected final static String PROTECTIVE_EQUIPMENT = "Line of Sight Rescue Personal Protective Equipment";
+    protected final static String INITIAL_ISOLATION_ZONE = "Initial Isolation Distance";
+    protected final static String PROTECTIVE_EQUIPMENT = "Line of Sight Rescue PPE";
     protected final static String METER_COCKPIT = "Meter Cockpit";
-    protected final static String TECHNICAL_DECON = "Decon";
+    protected final static String TECHNICAL_DECON = "DECON";
 
     @Inject
     protected HazardousMaterialDAO materialDAO;
@@ -98,12 +98,13 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
         if (material != null) {
             Log.i(TAG, "Received material from DB : " + material.getName());
             initGeneralInfo(material.getName(),
-                    material.getPlumChemicalHazards(),
-                    material.getPlumStateofMatter(),
-                    material.getPlumIniIsoZone(),
-                    material.getPlumHazmatIqSog(), material.getPlumPlumPpe(),
-                    material.getPlumMeterCockpit(),
-                    material.getPlumTechnicalDecon());
+                    material.getRescChemicalHazards(),
+                    material.getRescStateOfMatter(),
+                    material.getRescIniIsoZone(),
+                    material.getRescHazmatIqSog(),
+                    material.getRescLosRescPpe(),
+                    material.getRescMeterCockpit(),
+                    material.getRescDecon());
         }
     }
 
@@ -114,14 +115,15 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
         generalInfoDTOList
                 .add(new ListViewDTO(NAME, DTOConverter.format(name)));
+        generalInfoDTOList.add(new ListViewDTO(HAZMAT_IQ_SOG, DTOConverter
+                .format(hazmatIQSog)));
         generalInfoDTOList.add(new ListViewDTO(HAZARDS, DTOConverter
                 .format(hazards)));
         generalInfoDTOList.add(new ListViewDTO(STATE, DTOConverter
                 .format(state)));
         generalInfoDTOList.add(new ListViewDTO(INITIAL_ISOLATION_ZONE,
                 DTOConverter.format(initialIsolationZone)));
-        generalInfoDTOList.add(new ListViewDTO(HAZMAT_IQ_SOG, DTOConverter
-                .format(hazmatIQSog)));
+
         generalInfoDTOList.add(new ListViewDTO(PROTECTIVE_EQUIPMENT,
                 DTOConverter.format(protectiveEquipment)));
         generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, DTOConverter

@@ -2,12 +2,14 @@ package com.rel.hazmat.widgets;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
+import android.text.style.SubscriptSpan;
 import android.text.style.UnderlineSpan;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.widget.TextView;
 
 /**
  * 
@@ -25,6 +27,8 @@ public class SOGTextView extends TypefacedTextView {
     public SOGTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         String text = (String) getText();
+        setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
+        text = (String) getText();
         Log.i(TAG, "Text contains GO : " + text.contains(GO) + " text dump : "
                 + text);
         if (text.contains(ALWAYS)) {
@@ -54,6 +58,11 @@ public class SOGTextView extends TypefacedTextView {
             SpannableString spannable = new SpannableString(text);
             spannable.setSpan(new UnderlineSpan(), 0, text.length(), 0);
             setText(spannable);
-        }
+        } 
+//        else if (text.contains(STAY_ALIVE)) {
+//            SpannableString spannable = new SpannableString(text);
+//            spannable.setSpan(new SubscriptSpan(), 0, text.length(), 0);
+//            setText(spannable);
+//        }
     }
 }

@@ -1,5 +1,6 @@
 package com.rel.hazmat.db.model;
 
+import com.google.gson.annotations.SerializedName;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -45,6 +46,11 @@ public class HazardousMaterial extends DBModel {
     public final static String PLUM_TECHNICAL_DECON = "plum_technical_decon";
 
     public final static String UN_ID = "un_id";
+
+    protected final static String RADIOACTIVITY = "radioactivity";
+    protected final static String CORROSIVITY = "corrosivity";
+    protected final static String POLYMERIZATION_POTENTIAL = "polymerization_potential";
+    protected final static String REACTIVITY = "reactivity";
 
     @DatabaseField(columnName = NAME)
     private String name;
@@ -107,6 +113,15 @@ public class HazardousMaterial extends DBModel {
     @DatabaseField(columnName = UN_ID)
     private String unID;
 
+    @DatabaseField(columnName = RADIOACTIVITY)
+    private String radioactivity;
+    @DatabaseField(columnName = CORROSIVITY)
+    private String corrosivity;
+    @DatabaseField(columnName = POLYMERIZATION_POTENTIAL)
+    private String polymerizationPotential;
+    @DatabaseField(columnName = REACTIVITY)
+    private String reactivity;
+
     public HazardousMaterial() {
         super();
     }
@@ -150,7 +165,9 @@ public class HazardousMaterial extends DBModel {
             String rescLosRescPpe, String rescMeterCockpit, String rescDecon,
             String plumChemicalHazards, String plumStateofMatter,
             String plumIniIsoZone, String plumHazmatIqSog, String plumPlumPpe,
-            String plumMeterCockpit, String plumTechnicalDecon, String unID) {
+            String plumMeterCockpit, String plumTechnicalDecon, String unID,
+            String radioactivity, String corrosivity,
+            String polymerizationPotential, String reactivity) {
         super(slug);
         this.id = id;
         this.name = name;
@@ -182,6 +199,10 @@ public class HazardousMaterial extends DBModel {
         this.plumMeterCockpit = plumMeterCockpit;
         this.plumTechnicalDecon = plumTechnicalDecon;
         this.unID = unID;
+        this.radioactivity = radioactivity;
+        this.corrosivity = corrosivity;
+        this.polymerizationPotential = polymerizationPotential;
+        this.reactivity = reactivity;
     }
 
     public String getName() {
@@ -414,6 +435,38 @@ public class HazardousMaterial extends DBModel {
 
     public void setUnID(String unID) {
         this.unID = unID;
+    }
+
+    public String getRadioactivity() {
+        return radioactivity;
+    }
+
+    public void setRadioactivity(String radioactivity) {
+        this.radioactivity = radioactivity;
+    }
+
+    public String getCorrosivity() {
+        return corrosivity;
+    }
+
+    public void setCorrosivity(String corrosivity) {
+        this.corrosivity = corrosivity;
+    }
+
+    public String getPolymerizationPotential() {
+        return polymerizationPotential;
+    }
+
+    public void setPolymerizationPotential(String polymerizationPotential) {
+        this.polymerizationPotential = polymerizationPotential;
+    }
+
+    public String getReactivity() {
+        return reactivity;
+    }
+
+    public void setReactivity(String reactivity) {
+        this.reactivity = reactivity;
     }
 
 }

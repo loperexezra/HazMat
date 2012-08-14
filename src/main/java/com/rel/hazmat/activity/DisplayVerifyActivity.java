@@ -21,6 +21,7 @@ import com.rel.hazmat.db.dao.HazardousMaterialDAO;
 import com.rel.hazmat.db.model.HazardousMaterial;
 import com.rel.hazmat.dto.ListViewDTO;
 import com.rel.hazmat.utils.DTOConverter;
+import com.rel.hazmat.utils.HazMatUtils;
 
 /**
  * 
@@ -37,9 +38,9 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
     public static final String LIMITS = "Limits";
 
     // General Information
-    protected final static String NAME = "Actual Name";
+    protected final static String NAME = "Chemical Name";
     protected final static String FORMULA = "Chemical Formula";
-    protected final static String DOT = "DOT Number";
+    protected final static String DOT = "DOT Guide Number";
     protected final static String STATE = "Physical Description";
     // Properties
     protected final static String MOLECULAR_WEIGHT = "Molecular Weight";
@@ -48,11 +49,16 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
     // Limits
     protected final static String UEL = "UEL";
     protected final static String LEL = "LEL";
-    protected final static String ION_POTENTIAL = "Ionization Potential";
+    protected final static String ION_POTENTIAL = "Ionizing Potential";
     protected final static String GRAVITY = "Specific Gravity";
     protected final static String IDLH = "IDLH";
     protected final static String REL = "REL";
     protected final static String PEL = "PEL";
+
+    protected final static String RADIOACTIVITY = "Radioactive";
+    protected final static String CORROSIVITY = "Corrosivity";
+    protected final static String POLYMERIZATION_POTENTIAL = "Polymerization Potential";
+    protected final static String REACTIVITY = "Reactivity";
 
     @Inject
     protected HazardousMaterialDAO materialDAO;
@@ -123,25 +129,36 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
         generalInfoDTOList.add(new ListViewDTO(NAME, DTOConverter
                 .format(material.getName())));
-        generalInfoDTOList.add(new ListViewDTO(FORMULA, DTOConverter
-                .format(material.getFormula())));
+        generalInfoDTOList.add(new ListViewDTO(FORMULA, HazMatUtils
+                .formatFormula(material.getFormula())));
         generalInfoDTOList.add(new ListViewDTO(DOT, DTOConverter
                 .format(material.getDotNo())));
         generalInfoDTOList.add(new ListViewDTO(STATE, DTOConverter
                 .format(material.getStates())));
 
+        generalInfoDTOList.add(new ListViewDTO(RADIOACTIVITY, DTOConverter
+                .format(material.getRadioactivity())));
+        generalInfoDTOList.add(new ListViewDTO(FLASH_POINT, DTOConverter
+                .format(material.getFlashPoint())));
+        generalInfoDTOList.add(new ListViewDTO(LEL, DTOConverter
+                .format(material.getLel() + "%")));
+        generalInfoDTOList.add(new ListViewDTO(UEL, DTOConverter
+                .format(material.getUel() + "%")));
+        generalInfoDTOList.add(new ListViewDTO(CORROSIVITY, DTOConverter
+                .format(material.getCorrosivity())));
         BoxedValueAdapter listAdapter = new BoxedValueAdapter(this,
                 generalInfoDTOList);
         initProperties(listAdapter, material.getMolecularWeight(),
-                material.getSolubility(), material.getFlashPoint());
-        initLimits(listAdapter, material.getUel(), material.getLel(),
-                material.getIonizationPressure(), material.getGravity(),
-                material.getIdlh(), material.getRel(), material.getPel());
+                material.getSolubility());
+        initLimits(listAdapter, material.getIonizationPressure(),
+                material.getPolymerizationPotential(), material.getGravity(),
+                material.getReactivity(), material.getIdlh(),
+                material.getRel(), material.getPel());
         lvwGeneralInfo.setAdapter(listAdapter);
     }
 
     protected void initProperties(BoxedValueAdapter listAdapter,
-            String molecularWeight, String solubility, String flashPoint) {
+            String molecularWeight, String solubility) {
         View headerGeneralInfo = (View) getLayoutInflater().inflate(
                 R.layout.item_header, null);
         TextView lblHeader = (TextView) headerGeneralInfo
@@ -152,14 +169,12 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
                 .format(molecularWeight)));
         propertiesDTOList.add(new ListViewDTO(SOLUBILITY, DTOConverter
                 .format(solubility)));
-        propertiesDTOList.add(new ListViewDTO(FLASH_POINT, DTOConverter
-                .format(flashPoint)));
         listAdapter.addAll(propertiesDTOList);
     }
 
-    protected void initLimits(BoxedValueAdapter listAdapter, String uel,
-            String lel, String ionPressure, String gravity, String idlh,
-            String rel, String pel) {
+    protected void initLimits(BoxedValueAdapter listAdapter,
+            String ionPressure, String polymerizationPotential, String gravity,
+            String reactivity, String idlh, String rel, String pel) {
         View headerGeneralInfo = (View) getLayoutInflater().inflate(
                 R.layout.item_header, null);
         TextView lblHeader = (TextView) headerGeneralInfo
@@ -168,12 +183,14 @@ public class DisplayVerifyActivity extends RoboSherlockActivity {
         // lvwGeneralInfo.addHeaderView(headerGeneralInfo);
         List<ListViewDTO> limitsDTOList = new ArrayList<ListViewDTO>();
 
-        limitsDTOList.add(new ListViewDTO(UEL, DTOConverter.format(uel + "%")));
-        limitsDTOList.add(new ListViewDTO(LEL, DTOConverter.format(lel + "%")));
         limitsDTOList.add(new ListViewDTO(ION_POTENTIAL, DTOConverter
                 .format(ionPressure)));
         limitsDTOList
                 .add(new ListViewDTO(GRAVITY, DTOConverter.format(gravity)));
+        limitsDTOList.add(new ListViewDTO(POLYMERIZATION_POTENTIAL,
+                DTOConverter.format(polymerizationPotential)));
+        limitsDTOList.add(new ListViewDTO(REACTIVITY, DTOConverter
+                .format(reactivity)));
         limitsDTOList.add(new ListViewDTO(IDLH, DTOConverter.format(idlh)));
         limitsDTOList.add(new ListViewDTO(REL, DTOConverter.format(rel)));
         limitsDTOList.add(new ListViewDTO(PEL, DTOConverter.format(pel)));
