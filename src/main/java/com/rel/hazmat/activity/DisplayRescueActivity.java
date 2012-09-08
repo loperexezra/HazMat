@@ -41,6 +41,13 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
     protected final static String METER_COCKPIT = "Meter Cockpit";
     protected final static String TECHNICAL_DECON = "DECON";
 
+    // Tabbed metered cockpit
+    protected final static String RAD_METER = "Rad Meter";
+    protected final static String F_VALUE = "F Paper";
+    protected final static String PH = "pH Paper";
+    protected final static String TEMPERATURE_GUN = "Temp Gun";
+    protected final static String CGI = "CGI";
+
     @Inject
     protected HazardousMaterialDAO materialDAO;
 
@@ -97,19 +104,31 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
         HazardousMaterial material = materialDAO.getItemUsingSlug(chemicalSlug);
         if (material != null) {
             Log.i(TAG, "Received material from DB : " + material.getName());
-            initGeneralInfo(material.getName(),
+            List<ListViewDTO> dtoList = new ArrayList<ListViewDTO>();
+            dtoList.addAll(initGeneralInfo(material.getName(),
                     material.getRescChemicalHazards(),
                     material.getRescStateOfMatter(),
                     material.getRescIniIsoZone(),
                     material.getRescHazmatIqSog(),
                     material.getRescLosRescPpe(),
-                    material.getRescMeterCockpit(),
-                    material.getRescDecon());
+                    material.getRescMeterCockpit(), material.getRescDecon()));
+            dtoList.addAll(initMeteredCockPit(material.getResRadmeter(),
+                    material.getResFValue(), material.getResPhValue(),
+                    material.getResTempgun(), material.getResCgi()));
+            setList(dtoList);
         }
     }
 
-    protected void initGeneralInfo(String name, String hazards, String state,
-            String initialIsolationZone, String hazmatIQSog,
+    // initMeteredCockPit(String radMeter, String fValue,
+    // String ph, String tempGun, String cGI)
+
+    protected void setList(List<ListViewDTO> dtoList) {
+        ListAdapter listAdapter = new BoxedValueAdapter(this, dtoList);
+        lvwGeneralInfo.setAdapter(listAdapter);
+    }
+
+    protected List<ListViewDTO> initGeneralInfo(String name, String hazards,
+            String state, String initialIsolationZone, String hazmatIQSog,
             String protectiveEquipment, String meterCockpit,
             String technicalDecon) {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
@@ -126,13 +145,27 @@ public class DisplayRescueActivity extends RoboSherlockActivity {
 
         generalInfoDTOList.add(new ListViewDTO(PROTECTIVE_EQUIPMENT,
                 DTOConverter.format(protectiveEquipment)));
-        generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, DTOConverter
-                .format(meterCockpit)));
         generalInfoDTOList.add(new ListViewDTO(TECHNICAL_DECON, DTOConverter
                 .format(technicalDecon)));
-        ListAdapter listAdapter = new BoxedValueAdapter(this,
-                generalInfoDTOList);
-        lvwGeneralInfo.setAdapter(listAdapter);
+        generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, DTOConverter
+                .format(meterCockpit)));
+        return generalInfoDTOList;
+    }
+
+    protected List<ListViewDTO> initMeteredCockPit(String radMeter,
+            String fValue, String ph, String tempGun, String cGI) {
+        List<ListViewDTO> meteredCockpitDTOList = new ArrayList<ListViewDTO>();
+        meteredCockpitDTOList.add(new ListViewDTO(RAD_METER, DTOConverter
+                .format(radMeter), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(F_VALUE, DTOConverter
+                .format(fValue), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(PH, DTOConverter.format(ph),
+                true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(TEMPERATURE_GUN, DTOConverter
+                .format(tempGun), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(CGI,
+                DTOConverter.format(cGI), true, R.color.red));
+        return meteredCockpitDTOList;
     }
 
 }

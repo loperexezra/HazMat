@@ -29,7 +29,15 @@ public class DBConverter {
                 response.getPlumMeterCockpit(),
                 response.getPlumTechnicalDecon(), response.getUnID(),
                 response.getRadioactivity(), response.getCorrosivity(),
-                response.getPolymerizationPotential(), response.getReactivity());
+                response.getPolymerizationPotential(),
+                response.getReactivity(), response.getDustMonitor(),
+                response.getPid(), response.getFid(), response.getFreonMeter(),
+                response.getTubeChip(), response.getPlumRadmeter(),
+                response.getPlumTempgun(), response.getPlumCgi(),
+                response.getPlumKiss(), response.getResFValue(),
+                response.getResPhValue(), response.getPlumFValue(),
+                response.getPlumPhValue(), response.getResRADMeter(),
+                response.getResTempGun(), response.getResCGI());
     }
 
 }

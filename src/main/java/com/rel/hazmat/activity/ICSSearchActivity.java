@@ -3,6 +3,8 @@ package com.rel.hazmat.activity;
 import net.hockeyapp.android.CrashManager;
 import net.hockeyapp.android.UpdateManager;
 import roboguice.inject.InjectView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -101,8 +103,18 @@ public class ICSSearchActivity extends ABSearchActivity {
                     material.getSlug());
             startActivity(intent);
         } else {
-            Toast.makeText(this, "UNID does not exist in our servers",
-                    Toast.LENGTH_LONG).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                    .setPositiveButton("OK",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface arg0,
+                                        int arg1) {
+                                }
+                            });
+            ;
+            builder.setMessage("Data not found in our server");
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 
@@ -116,4 +128,9 @@ public class ICSSearchActivity extends ABSearchActivity {
         startActivity(intent);
     }
 
+    public void onClickCharts(View view) {
+        Intent intent = new Intent();
+        intent.setClass(this, GridImageActivity.class);
+        startActivity(intent);
+    }
 }

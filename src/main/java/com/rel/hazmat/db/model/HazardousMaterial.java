@@ -1,6 +1,5 @@
 package com.rel.hazmat.db.model;
 
-import com.google.gson.annotations.SerializedName;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -51,6 +50,24 @@ public class HazardousMaterial extends DBModel {
     protected final static String CORROSIVITY = "corrosivity";
     protected final static String POLYMERIZATION_POTENTIAL = "polymerization_potential";
     protected final static String REACTIVITY = "reactivity";
+
+    protected final static String DUST_MONITOR = "dust_monitor";
+    protected final static String PID = "pid";
+    protected final static String FID = "fid";
+    protected final static String FREON_METER = "freon_meter";
+    protected final static String TUBE_CHIP = "tube_chip";
+    protected final static String PLUM_RADMETER = "plum_radmeter";
+    protected final static String PLUM_TEMPGUN = "plum_tempgun";
+    protected final static String PLUM_CGI = "plum_cgi";
+    protected final static String PLUM_KISS = "plum_kiss";
+    protected final static String RES_F_VALUE = "res_f";
+    protected final static String RES_PH_VALUE = "res_ph";
+    protected final static String PLUM_F_VALUE = "plum_f";
+    protected final static String PLUM_PH_VALUE = "plum_ph";
+
+    protected final static String RES_RAD_METER = "res_radmeter";
+    protected final static String RES_TEMP_GUN = "res_tempgun";
+    protected final static String RES_CGI = "res_cgi";
 
     @DatabaseField(columnName = NAME)
     private String name;
@@ -121,6 +138,39 @@ public class HazardousMaterial extends DBModel {
     private String polymerizationPotential;
     @DatabaseField(columnName = REACTIVITY)
     private String reactivity;
+
+    @DatabaseField(columnName = DUST_MONITOR)
+    private String dustMonitor;
+    @DatabaseField(columnName = PID)
+    private String pid;
+    @DatabaseField(columnName = FID)
+    private String fid;
+    @DatabaseField(columnName = FREON_METER)
+    private String freonMeter;
+    @DatabaseField(columnName = TUBE_CHIP)
+    private String tubeChip;
+    @DatabaseField(columnName = PLUM_RADMETER)
+    private String plumRadmeter;
+    @DatabaseField(columnName = PLUM_TEMPGUN)
+    private String plumTempgun;
+    @DatabaseField(columnName = PLUM_CGI)
+    private String plumCgi;
+    @DatabaseField(columnName = PLUM_KISS)
+    private String plumKiss;
+    @DatabaseField(columnName = RES_F_VALUE)
+    private String resFValue;
+    @DatabaseField(columnName = RES_PH_VALUE)
+    private String resPhValue;
+    @DatabaseField(columnName = PLUM_F_VALUE)
+    private String plumFValue;
+    @DatabaseField(columnName = PLUM_PH_VALUE)
+    private String plumPhValue;
+    @DatabaseField(columnName = RES_RAD_METER)
+    private String resRadmeter;
+    @DatabaseField(columnName = RES_TEMP_GUN)
+    private String resTempgun;
+    @DatabaseField(columnName = RES_CGI)
+    private String resCgi;
 
     public HazardousMaterial() {
         super();
@@ -203,6 +253,77 @@ public class HazardousMaterial extends DBModel {
         this.corrosivity = corrosivity;
         this.polymerizationPotential = polymerizationPotential;
         this.reactivity = reactivity;
+    }
+
+    public HazardousMaterial(Integer id, String slug, String name,
+            String formula, String states, String dotNo,
+            String molecularWeight, String solubility,
+            String ionizationPressure, String gravity, String flashPoint,
+            String uel, String lel, String idlh, String rel, String pel,
+            String rescChemicalHazards, String rescStateOfMatter,
+            String rescIniIsoZone, String rescHazmatIqSog,
+            String rescLosRescPpe, String rescMeterCockpit, String rescDecon,
+            String plumChemicalHazards, String plumStateofMatter,
+            String plumIniIsoZone, String plumHazmatIqSog, String plumPlumPpe,
+            String plumMeterCockpit, String plumTechnicalDecon, String unID,
+            String radioactivity, String corrosivity,
+            String polymerizationPotential, String reactivity,
+            String dustMonitor, String pid, String fid, String freonMeter,
+            String tubeChip, String plumRadmeter, String plumTempgun,
+            String plumCgi, String plumKiss, String resFValue,
+            String resPhValue, String plumFValue, String plumPhValue,
+            String resRadmeter, String resTempgun, String resCgi) {
+        super(slug);
+        this.id = id;
+        this.name = name;
+        this.formula = formula;
+        this.states = states;
+        this.dotNo = dotNo;
+        this.molecularWeight = molecularWeight;
+        this.solubility = solubility;
+        this.ionizationPressure = ionizationPressure;
+        this.gravity = gravity;
+        this.flashPoint = flashPoint;
+        this.uel = uel;
+        this.lel = lel;
+        this.idlh = idlh;
+        this.rel = rel;
+        this.pel = pel;
+        this.rescChemicalHazards = rescChemicalHazards;
+        this.rescStateOfMatter = rescStateOfMatter;
+        this.rescIniIsoZone = rescIniIsoZone;
+        this.rescHazmatIqSog = rescHazmatIqSog;
+        this.rescLosRescPpe = rescLosRescPpe;
+        this.rescMeterCockpit = rescMeterCockpit;
+        this.rescDecon = rescDecon;
+        this.plumChemicalHazards = plumChemicalHazards;
+        this.plumStateofMatter = plumStateofMatter;
+        this.plumIniIsoZone = plumIniIsoZone;
+        this.plumHazmatIqSog = plumHazmatIqSog;
+        this.plumPlumPpe = plumPlumPpe;
+        this.plumMeterCockpit = plumMeterCockpit;
+        this.plumTechnicalDecon = plumTechnicalDecon;
+        this.unID = unID;
+        this.radioactivity = radioactivity;
+        this.corrosivity = corrosivity;
+        this.polymerizationPotential = polymerizationPotential;
+        this.reactivity = reactivity;
+        this.dustMonitor = dustMonitor;
+        this.pid = pid;
+        this.fid = fid;
+        this.freonMeter = freonMeter;
+        this.tubeChip = tubeChip;
+        this.plumRadmeter = plumRadmeter;
+        this.plumTempgun = plumTempgun;
+        this.plumCgi = plumCgi;
+        this.plumKiss = plumKiss;
+        this.resFValue = resFValue;
+        this.resPhValue = resPhValue;
+        this.plumFValue = plumFValue;
+        this.plumPhValue = plumPhValue;
+        this.resRadmeter = resRadmeter;
+        this.resTempgun = resTempgun;
+        this.resCgi = resCgi;
     }
 
     public String getName() {
@@ -467,6 +588,134 @@ public class HazardousMaterial extends DBModel {
 
     public void setReactivity(String reactivity) {
         this.reactivity = reactivity;
+    }
+
+    public String getDustMonitor() {
+        return dustMonitor;
+    }
+
+    public void setDustMonitor(String dustMonitor) {
+        this.dustMonitor = dustMonitor;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+
+    public String getFid() {
+        return fid;
+    }
+
+    public void setFid(String fid) {
+        this.fid = fid;
+    }
+
+    public String getFreonMeter() {
+        return freonMeter;
+    }
+
+    public void setFreonMeter(String freonMeter) {
+        this.freonMeter = freonMeter;
+    }
+
+    public String getTubeChip() {
+        return tubeChip;
+    }
+
+    public void setTubeChip(String tubeChip) {
+        this.tubeChip = tubeChip;
+    }
+
+    public String getPlumRadmeter() {
+        return plumRadmeter;
+    }
+
+    public void setPlumRadmeter(String plumRadmeter) {
+        this.plumRadmeter = plumRadmeter;
+    }
+
+    public String getPlumTempgun() {
+        return plumTempgun;
+    }
+
+    public void setPlumTempgun(String plumTempgun) {
+        this.plumTempgun = plumTempgun;
+    }
+
+    public String getPlumCgi() {
+        return plumCgi;
+    }
+
+    public void setPlumCgi(String plumCgi) {
+        this.plumCgi = plumCgi;
+    }
+
+    public String getPlumKiss() {
+        return plumKiss;
+    }
+
+    public void setPlumKiss(String plumKiss) {
+        this.plumKiss = plumKiss;
+    }
+
+    public String getResFValue() {
+        return resFValue;
+    }
+
+    public void setResFValue(String resFValue) {
+        this.resFValue = resFValue;
+    }
+
+    public String getResPhValue() {
+        return resPhValue;
+    }
+
+    public void setResPhValue(String resPhValue) {
+        this.resPhValue = resPhValue;
+    }
+
+    public String getPlumFValue() {
+        return plumFValue;
+    }
+
+    public void setPlumFValue(String plumFValue) {
+        this.plumFValue = plumFValue;
+    }
+
+    public String getPlumPhValue() {
+        return plumPhValue;
+    }
+
+    public void setPlumPhValue(String plumPhValue) {
+        this.plumPhValue = plumPhValue;
+    }
+
+    public String getResRadmeter() {
+        return resRadmeter;
+    }
+
+    public void setResRadmeter(String resRadmeter) {
+        this.resRadmeter = resRadmeter;
+    }
+
+    public String getResTempgun() {
+        return resTempgun;
+    }
+
+    public void setResTempgun(String resTempgun) {
+        this.resTempgun = resTempgun;
+    }
+
+    public String getResCgi() {
+        return resCgi;
+    }
+
+    public void setResCgi(String resCgi) {
+        this.resCgi = resCgi;
     }
 
 }

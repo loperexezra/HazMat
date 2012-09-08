@@ -22,6 +22,8 @@
     <color name="blue">#0000FF</color>
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
+    <color name="spec_gold">#F1C161</color>
+    <color name="spec_green">#27FE25</color>
     <color name="ics_blue_light">#33B5E5</color>
     <color name="ics_blue_light_light">#D8EDF4</color>
     <color name="ics_gray">#D6D6D6</color>

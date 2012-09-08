@@ -32,41 +32,42 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dip"
         android:background="@color/ics_container"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dip" >
 
         <com.rel.hazmat.widgets.TypefacedButton
             style="@style/ics_button"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="48dip"
-            android:background="@drawable/selector_button_blue"
+            android:background="@drawable/selector_button_rescue"
             android:gravity="center"
             android:onClick="onClickRescue"
-            android:text="Rescue"
+            android:text=""
             android:textColor="@color/black"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
 
         <com.rel.hazmat.widgets.TypefacedButton
             style="@style/ics_button"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="48dip"
             android:layout_marginTop="10dip"
-            android:background="@drawable/selector_button_yellow"
+            android:background="@drawable/selector_button_plumbing"
             android:gravity="center"
             android:onClick="onClickPlumbing"
-            android:text="Plumbing"
+            android:text=""
             android:textColor="@color/black"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
 
         <com.rel.hazmat.widgets.TypefacedButton
             style="@style/ics_button"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="48dip"
             android:layout_marginTop="10dip"
-            android:background="@drawable/selector_button_green"
+            android:background="@drawable/selector_button_verify"
             android:gravity="center"
             android:onClick="onClickVerify"
-            android:text="Verify"
+            android:text=""
             android:textColor="@color/black"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
     </LinearLayout>

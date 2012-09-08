@@ -41,6 +41,19 @@ public class DisplayPlumbingActivity extends RoboSherlockActivity {
     protected final static String METER_COCKPIT = "Meter Cockpit";
     protected final static String TECHNICAL_DECON = "Technical DECON";
 
+    // Tabbed metered cockpit
+    protected final static String RAD_METER = "Rad Meter";
+    protected final static String F_VALUE = "F";
+    protected final static String PH = "pH";
+    protected final static String TEMPERATURE_GUN = "Temp Gun";
+    protected final static String CGI = "CGI";
+    protected final static String KISS = "KIss\u2122";
+    protected final static String DUST_MONITOR = "Dust Monitor";
+    protected final static String PID = "PID";
+    protected final static String FID = "FID";
+    protected final static String FREON_METER = "Freon Meter";
+    protected final static String TUBE_CHIP = "Tube-Chip";
+
     @Inject
     protected HazardousMaterialDAO materialDAO;
 
@@ -97,18 +110,31 @@ public class DisplayPlumbingActivity extends RoboSherlockActivity {
         HazardousMaterial material = materialDAO.getItemUsingSlug(chemicalSlug);
         Log.i(TAG, "Received material from DB : " + material.getName());
         if (material != null) {
-            initGeneralInfo(material.getName(),
+            List<ListViewDTO> dtoList = new ArrayList<ListViewDTO>();
+            dtoList.addAll(initGeneralInfo(material.getName(),
                     material.getPlumChemicalHazards(),
                     material.getPlumStateofMatter(),
                     material.getPlumIniIsoZone(),
                     material.getPlumHazmatIqSog(), material.getPlumPlumPpe(),
                     material.getPlumMeterCockpit(),
-                    material.getPlumTechnicalDecon());
+                    material.getPlumTechnicalDecon()));
+            dtoList.addAll(initMeteredCockPit(material.getPlumRadmeter(),
+                    material.getPlumFValue(), material.getPlumPhValue(),
+                    material.getPlumTempgun(), material.getPlumCgi(),
+                    material.getPlumKiss(), material.getDustMonitor(),
+                    material.getPid(), material.getFid(),
+                    material.getFreonMeter(), material.getTubeChip()));
+            setList(dtoList);
         }
     }
 
-    protected void initGeneralInfo(String name, String hazards, String state,
-            String initialIsolationZone, String hazmatIQSOG,
+    protected void setList(List<ListViewDTO> dtoList) {
+        ListAdapter listAdapter = new BoxedValueAdapter(this, dtoList);
+        lvwGeneralInfo.setAdapter(listAdapter);
+    }
+
+    protected List<ListViewDTO> initGeneralInfo(String name, String hazards,
+            String state, String initialIsolationZone, String hazmatIQSOG,
             String protectiveEquipment, String meterCockpit,
             String technicalDecon) {
         List<ListViewDTO> generalInfoDTOList = new ArrayList<ListViewDTO>();
@@ -124,13 +150,40 @@ public class DisplayPlumbingActivity extends RoboSherlockActivity {
                 DTOConverter.format(initialIsolationZone)));
         generalInfoDTOList.add(new ListViewDTO(PROTECTIVE_EQUIPMENT,
                 DTOConverter.format(protectiveEquipment)));
-        generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, DTOConverter
-                .format(meterCockpit)));
         generalInfoDTOList.add(new ListViewDTO(TECHNICAL_DECON, DTOConverter
                 .format(technicalDecon)));
-        ListAdapter listAdapter = new BoxedValueAdapter(this,
-                generalInfoDTOList);
-        lvwGeneralInfo.setAdapter(listAdapter);
+        generalInfoDTOList.add(new ListViewDTO(METER_COCKPIT, DTOConverter
+                .format(meterCockpit)));
+        return generalInfoDTOList;
     }
 
+    protected List<ListViewDTO> initMeteredCockPit(String radMeter,
+            String fValue, String ph, String tempGun, String cGI, String kIss,
+            String dustMonitor, String pID, String fID, String freonMeter,
+            String tubeChip) {
+        List<ListViewDTO> meteredCockpitDTOList = new ArrayList<ListViewDTO>();
+        meteredCockpitDTOList.add(new ListViewDTO(RAD_METER, DTOConverter
+                .format(radMeter), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(F_VALUE, DTOConverter
+                .format(fValue), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(PH, DTOConverter.format(ph),
+                true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(TEMPERATURE_GUN, DTOConverter
+                .format(tempGun), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(CGI,
+                DTOConverter.format(cGI), true, R.color.red));
+        meteredCockpitDTOList.add(new ListViewDTO(KISS, DTOConverter
+                .format(kIss), true, R.color.blue));
+        meteredCockpitDTOList.add(new ListViewDTO(DUST_MONITOR, DTOConverter
+                .format(dustMonitor), true, R.color.spec_green));
+        meteredCockpitDTOList.add(new ListViewDTO(PID,
+                DTOConverter.format(pID), true, R.color.spec_green));
+        meteredCockpitDTOList.add(new ListViewDTO(FID,
+                DTOConverter.format(fID), true, R.color.spec_green));
+        meteredCockpitDTOList.add(new ListViewDTO(FREON_METER, DTOConverter
+                .format(freonMeter), true, R.color.spec_green));
+        meteredCockpitDTOList.add(new ListViewDTO(TUBE_CHIP, DTOConverter
+                .format(tubeChip), true, R.color.spec_green));
+        return meteredCockpitDTOList;
+    }
 }

@@ -64,12 +64,23 @@ public class BoxedValueAdapter extends BaseAdapter {
         TypefacedTextView lblActivityValue = (TypefacedTextView) row
                 .findViewById(R.id.lblActivityValue);
 
+        lblActivityName.setTextColor(mContext.getResources().getColor(
+                activityDTO.getLblColor()));
+        lblActivityValue.setTextColor(mContext.getResources().getColor(
+                activityDTO.getLblColor()));
+
         lblActivityName.setText(activityDTO.getValueName());
         lblActivityValue.setText(activityDTO.getValue());
         if (activityDTO.getValueName().contains("Formula")) {
             lblActivityValue.setText(Html.fromHtml(HazMatUtils
                     .formatFormula(activityDTO.getValue())),
                     TextView.BufferType.SPANNABLE);
+        }
+        if (activityDTO.getTabbed()) {
+            System.out.println("------" + activityDTO.getValueName());
+            lblActivityName.setPadding(50, 0, 0, 0);
+        } else {
+            lblActivityName.setPadding(0, 0, 0, 0);
         }
         return row;
     }

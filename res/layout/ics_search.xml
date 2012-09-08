@@ -71,21 +71,39 @@
 
         <com.rel.hazmat.widgets.TypefacedButton
             style="@style/ics_button"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
-            android:layout_marginTop="20dip"
+            android:layout_width="wrap_content"
+            android:layout_height="48dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dip"
+            android:background="@drawable/selector_button_search"
             android:gravity="center"
             android:onClick="onClickSearch"
-            android:text="@string/lbl_search"
+            android:text=""
+            android:textSize="25dip"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
 
         <com.rel.hazmat.widgets.TypefacedButton
             style="@style/ics_button"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_width="wrap_content"
+            android:layout_height="48dip"
+            android:layout_gravity="center"
+            android:background="@drawable/selector_button_unknown"
             android:gravity="center"
             android:onClick="onClickSearchUnknown"
-            android:text="@string/lbl_unknown"
+            android:text=""
+            android:textSize="25dip"
+            hazmat:typeface="fonts/Roboto-Bold.ttf" />
+
+        <com.rel.hazmat.widgets.TypefacedButton
+            style="@style/ics_button"
+            android:layout_width="wrap_content"
+            android:layout_height="48dip"
+            android:layout_gravity="center"
+            android:background="@drawable/selector_button_charts"
+            android:gravity="center"
+            android:onClick="onClickCharts"
+            android:text=""
+            android:textSize="25dip"
             hazmat:typeface="fonts/Roboto-Bold.ttf" />
     </LinearLayout>
 

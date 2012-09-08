@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tetrahydrocannabinol"
-        android:textColor="@color/ics_blue_light"
+        android:textColor="@color/white"
         android:textSize="18dip"
         hazmat:typeface="fonts/Roboto-Medium.ttf" />
 
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CH3CHO"
-        android:textColor="@color/ics_gray"
+        android:textColor="@color/spec_gold"
         android:textSize="18dip"
         hazmat:typeface="fonts/Roboto-Light.ttf" />
 

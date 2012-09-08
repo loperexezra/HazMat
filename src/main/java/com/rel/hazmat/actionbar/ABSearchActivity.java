@@ -1,7 +1,9 @@
 package com.rel.hazmat.actionbar;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -43,15 +45,22 @@ public class ABSearchActivity extends HazMatBaseActivity implements
         super.onCreate(savedInstanceState);
         setTheme(R.style.hazmatTheme);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("HazMat Guru");
+        getSupportActionBar().setTitle("HazMatIQ");
     }
 
     protected void checkConnection() {
         if (!isNetworkAvailable()) {
-            Toast.makeText(
-                    this,
-                    "You will need an internet connection to update your chemical list",
-                    Toast.LENGTH_LONG).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                    .setPositiveButton("OK",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface arg0,
+                                        int arg1) {
+                                }
+                            });
+            builder.setMessage("Not connected to a network or access point");
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 

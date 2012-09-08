@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rel.hazmat"
-    android:versionCode="22"
+    android:versionCode="23"
     android:versionName="1.0-RC-1" >
 
     <uses-sdk
@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".activity.ICSSearchActivity" >
         </activity>
+        <activity android:name=".activity.GridImageActivity" >
+        </activity>
         <activity android:name=".activity.SearchResultActivity" >
         </activity>
         <activity android:name=".activity.DisplayRescueActivity" >
@@ -37,6 +39,8 @@
         <activity android:name=".activity.DisplayPlumbingActivity" >
         </activity>
         <activity android:name=".activity.ViewChoicesActivity" >
+        </activity>
+        <activity android:name=".activity.ViewImageActivity" >
         </activity>
         <activity android:name=".activity.SOGActivity" >
         </activity>

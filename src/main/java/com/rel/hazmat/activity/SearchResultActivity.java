@@ -52,6 +52,8 @@ public class SearchResultActivity extends ABSearchActivity implements
         requestWindowFeature(Window.FEATURE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_result_list);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initForm();
     }
 
